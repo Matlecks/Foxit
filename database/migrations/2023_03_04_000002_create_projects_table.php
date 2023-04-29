@@ -15,11 +15,21 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('anounce_text');
-            $table->text('anounce_image');
-            $table->text('details_text');
-            $table->text('details_image');
+            $table->string('title')->nullable();
+            $table->text('anounce_text')->nullable();
+            $table->text('anounce_image')->nullable();
+            $table->text('details_text')->nullable();
+            $table->text('details_image')->nullable();
+            $table->text('SEOTitle')->nullable();
+            $table->text('SEOKeys')->nullable();
+            $table->text('SEODescription')->nullable();
+            $table->text('ALTAnounceImg')->nullable();
+            $table->text('TITLEAnounceImg')->nullable();
+            $table->text('FileNameAnounceImg')->nullable();
+            $table->text('ALTDetailsImg')->nullable();
+            $table->text('TITLEDetailsImg')->nullable();
+            $table->text('FileNameDetailsImg')->nullable();
+            $table->text('TAGS')->nullable();
             $table->softDeletes();
             //$table->foreignId('users_id')->constrained('users');
             //$table->foreignId('reviews_id')->constrained('reviews');

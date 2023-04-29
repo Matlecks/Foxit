@@ -42,7 +42,10 @@
 
                 </div>
                 <div class="col-4 d-flex justify-content-end">
-                    <button class="btn-add px-4 me-3">Добавить Проект</button>
+                    <a href="{{ route('AddPage', $title = 'Проект') }}"><button
+                            class="btn-add px-4 me-3" type="button" data-bs-target="#AddEdit"
+                            data-bs-toggle="modal">Добавить
+                            Проект</button></a>
                     <button class="btn-export">Export</button>
                 </div>
             </div>
@@ -54,126 +57,80 @@
                             <input class="form-check-input" type="checkbox" value=""
                                 id="flexCheckDefault">
                         </td>
+                        <td class="col th-type-1"></td>
                         <td class="col th-type-1">ID</td>
                         <td class="col th-type-1">Название</td>
-                        <td class="col th-type-1">Клиент</td>
+                        <td class="col th-type-1">Активность</td>
                         <td class="col th-type-1">Исполнитель</td>
                         <td class="col th-type-1">Опубликован</td>
                         <td class="col th-type-1">Статус</td>
-                        <td class="col th-type-1">Действия</td>
+                        <td class="col th-type-1"></td>
                     </tr>
-                    <tr class="">
-                        <td class="col th-type-1"><input class="form-check-input" type="checkbox"
-                                value="" id="flexCheckDefault"></td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-bolder">1</td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">Example1.ru
-                        </td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">Иван Иванович
-                        </td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">Дамир Хайбулин
-                        </td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">04 марта 2023
-                        </td>
-                        <td class="col th-type-1">
-                            <div class="rounded-2 text-center fs-12 fw-bolder col-6"
-                                style="background-color: rgba(57,175,209,.18); color: #39AFD1   ">В работе
-                            </div>
-                        </td>
-                        <td class="col th-type-1 d-flex justify-content-start" style="color:#6C757D;">
-                            <div class="ms-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                    <path
-                                        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                    <path fill-rule="evenodd"
-                                        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                                </svg>
-                            </div>
-                            <div class="ms-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                </svg>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col th-type-1"><input class="form-check-input" type="checkbox"
-                                value="" id="flexCheckDefault"></td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-bolder">2</td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">Example2.ru
-                        </td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">Петр Петрович
-                        </td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">Дамир Хайбулин
-                        </td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">21 февраля 2023
-                        </td>
-                        <td class="col th-type-1">
-                            <div class="rounded-2 text-center fs-12 fw-bolder col-6"
-                                style="background-color: rgba(10,207,151,.18); color: #0acf97">Готов
-                            </div>
-                        </td>
-                        <td class="col th-type-1 d-flex justify-content-start" style="color:#6C757D;">
-                            <div class="ms-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    fill="currentColor" class="bi bi-pencil-square"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                    <path fill-rule="evenodd"
-                                        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                                </svg>
-                            </div>
-                            <div class="ms-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    fill="currentColor" class="bi bi-trash3-fill"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                </svg>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col th-type-1"><input class="form-check-input" type="checkbox"
-                                value="" id="flexCheckDefault"></td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-bolder">3</td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">Example3.ru
-                        </td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">Андрей Петрович
-                        </td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">Дамир
-                            Хайбулин</td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">12 января 2023
-                        </td>
-                        <td class="col th-type-1">
-                            <div class="rounded-2 text-center fs-12 fw-bolder col-6"
-                                style="background-color: rgba(10,207,151,.18); color: #0acf97">Готов
-                            </div>
-                        </td>
-                        <td class="col th-type-1 d-flex justify-content-start" style="color:#6C757D;">
-                            <div class="ms-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    fill="currentColor" class="bi bi-pencil-square"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                    <path fill-rule="evenodd"
-                                        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                                </svg>
-                            </div>
-                            <div class="ms-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    fill="currentColor" class="bi bi-trash3-fill"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                </svg>
-                            </div>
-                        </td>
-                    </tr>
+                    @foreach ($projects as $project)
+                        <tr class="">
+                            <td class="col th-type-1"><input class="form-check-input" type="checkbox"
+                                    value="" id="flexCheckDefault"></td>
+                            <td class="col th-type-1 dropdown">
+                                <button type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                    style="background: none; border-style: solid; border-width: 0px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-list"
+                                        viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                                    </svg>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item"
+                                            href="{{ route('EditPage', $project->id) }}">Изменить</a>
+                                    </li>
+                                    <li>
+                                        <form action="{{ route('ProjectRestore', $project->id) }}"
+                                            method="post">
+                                            {{-- @method('PUT') --}}
+                                            @csrf
+                                            <button type="submit" class="dropdown-item"
+                                                style="background:none; border-style: solid; border-width: 0px; border-color: none;">Активировать</button>
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form action="{{ route('ProjectDelete', $project->id) }}"
+                                            method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="dropdown-item"
+                                                style="background:none; border-style: solid; border-width: 0px; border-color: none;">Деактивировать</button>
+                                        </form>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Удалить</a></li>
+                                </ul>
+                            </td>
+                            <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-bolder">
+                                {{ $project->id }}</td>
+                            <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">
+                                {{ $project->title }}
+                            </td>
+                            <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">
+                                @if ($project->trashed())
+                                    Нет
+                                @else
+                                    Да
+                                @endif
+                            </td>
+                            <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">Дамир
+                                Хайбулин
+                            </td>
+                            <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">
+                                {{ $project->created_at }}
+                            </td>
+                            <td class="col th-type-1">
+                                <div class="rounded-2 text-center fs-12 fw-bolder col-6"
+                                    style="background-color: rgba(57,175,209,.18); color: #39AFD1">В
+                                    работе
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
                 </table>
             </div>
         </div>

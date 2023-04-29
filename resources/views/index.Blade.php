@@ -32,6 +32,56 @@
     @include('Includes.header')
     @include('Includes.body')
     @include('Includes.footer')
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-5" style="border-radius: 4px;">
+                <div class="d-flex justify-content-between align-items-center ">
+                    <h1 class="modal-title fs-24 fw-bolder text-montserrat"
+                        id="staticBackdropLabel">Вход в личный кабинет</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <form action="{{ route('UserAuth') }}" method="post">
+                    @csrf
+                    <div class="mt-5">
+                        <label for="form-login" class="form-label title-over">Логин
+                            <span style="color: #F25353">*</span></label>
+                        <input class="form-control form-login-1" type="text" id="form-login"
+                            name="login">
+                        <label for="form-password" class="form-label title-over mt-4">Пароль <span
+                                style="color: #F25353">*</span></label>
+                        <input class="form-control form-login-1" type="text" id="form-password"
+                            name="password">
+                        <div class="d-flex justify-content-between mt-4">
+                            <div class="col-5">
+                                <input class="form-check-input" type="checkbox" value=""
+                                    id="flexCheckDefault">
+                                <label class="form-check-label card-date ms-2"
+                                    for="flexCheckDefault">
+                                    Запомнить меня
+                                </label>
+                            </div>
+                            <div class="col-4">
+                                Забыли пароль?
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-5">
+                        <div class="col-6 pe-2">
+                            <button type="submit"
+                                class="btn btn-primary col-12 py-3 text-montserrat fw-bolder fs-15"
+                                style="background: #5273E0" data-bs-dismiss="modal">Войти</button>
+                        </div>
+                        <div class="col-6 ps-2"><a href="{{ route('registrate_page') }}">
+                                <button type="button"
+                                    class="btn btn-outline-primary col-12 py-3">Регистрация</button></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

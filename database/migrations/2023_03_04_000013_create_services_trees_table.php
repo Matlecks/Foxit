@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('services', function (Blueprint $table) {
+        Schema::create('services_trees', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('parent_id')->nullable();
             $table->string('title')->nullable();
             $table->text('anounce_text')->nullable();
             $table->text('anounce_image')->nullable();
             $table->text('details_text')->nullable();
             $table->text('details_image')->nullable();
-            $table->text('cost')->nullable();
             $table->text('SEOTitle')->nullable();
             $table->text('SEOKeys')->nullable();
             $table->text('SEODescription')->nullable();
@@ -32,7 +32,6 @@ return new class extends Migration
             $table->text('FileNameDetailsImg')->nullable();
             $table->text('TAGS')->nullable();
             $table->softDeletes();
-            //$table->foreignId('users_id')->constrained('users');
             $table->timestamps();
         });
     }
@@ -44,6 +43,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('services_trees');
     }
 };

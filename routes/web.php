@@ -1,5 +1,12 @@
 <?php
 
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\IndexPageController;
+use App\Http\Controllers\ServicesTreeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,28 +20,150 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'content')->name('main');
+Route::get('/', [IndexPageController::class,'index'])->name('main');
 
-Route::view('/company','company')->name('company');
+//Route::get('/test',[ServicesTreeController::class,'index'])->name('test');
 
-Route::view('/services','services')->name('services');
+Route::view('/company', 'company')->name('company');
 
-Route::view('/projects','projects')->name('projects');
+Route::get('/services', [ServicesTreeController::class,'indexsections'])->name('servicessections');
 
-Route::view('/news','news')->name('news');
+Route::get('/services/{title}', [ServicesTreeController::class,'indexsubsections'])->name('servicessubsections');
 
-Route::view('/contacts','contacts')->name('contacts');
+Route::get('/services/asdsd/{id}', [ServicesController::class, 'detail'])->name('ShowDetailPage');
 
-Route::view('/adminpage','adminpage')->name('adminpage');
+Route::get('/projects', [ProjectController::class,'index'])->name('projects');
 
-Route::view('/adminpage/projects_admin_list','projects_admin_list')->name('projects_admin_list');
+Route::get('/projects/{id}', [ProjectController::class, 'detail'])->name('ShowProjectDetailPage');
 
-Route::view('/adminpage/services_admin_list','services_admin_list')->name('services_admin_list');
+Route::get('/news', [PostsController::class,'index'])->name('news');
 
-Route::view('/adminpage/posts_admin_list','posts_admin_list')->name('posts_admin_list');
+Route::get('/news/{id}', [PostsController::class,'detail'])->name('new_detail');
 
-Route::view('/adminpage/users_admin_list','users_admin_list')->name('users_admin_list');
+Route::view('/contacts', 'contacts')->name('contacts');
 
-Route::view('/adminpage/reviews_admin_list','reviews_admin_list')->name('reviews_admin_list');
+Route::view('/registration', 'registrate')->name('registrate_page');
 
-Route::view('/adminpage/orders_admin_list','orders_admin_list')->name('orders_admin_list');
+Route::view('/cabinet', 'cabinet')->name('cabinet');
+
+Route::post('/registrate', [UserController::class, 'UserAdd'])->name('UserAdd');
+
+Route::post('/auth', [UserController::class, 'UserAuth'])->name('UserAuth');
+
+Route::view('/about','about')->name('about');
+
+Route::get('/personal',[UserController::class,'index'])->name('personal');
+
+Route::get('/personal/{id}', [UserController::class,'detail'])->name('personal_detail');
+
+Route::get('/reviews',[ReviewController::class,'index'])->name('reviews');
+
+Route::middleware('role.check')->group(function () {
+
+    Route::view('/adminpage', 'dashboard')->name('adminpage');
+
+    Route::view('/adminpage/orders_admin_list', 'orders_admin_list')->name('orders_admin_list');
+
+    Route::view('/dashboard', 'dashboard')->name('dashboard');
+
+
+
+
+
+    Route::get('/AddPageProject', [ProjectController::class, 'AddPage'])->name('AddPage');
+
+    Route::post('/projects_admin_list/AddPage', [ProjectController::class, 'AddProject'])->name('AddProject');
+
+    Route::get('/adminpage/projects_admin_list', [ProjectController::class, 'ShowTable'])->name('ShowTable');
+
+    Route::get('/projects_admin_list/EditPage/{id}', [ProjectController::class, 'EditPage'])->name('EditPage');
+
+    Route::post('/projects_admin_list/EditPage/Update-{id}', [ProjectController::class, 'UpdateProject'])->name('UpdateProject');
+
+    Route::delete('/projects_admin_list/Delete-{id}', [ProjectController::class, 'delete'])->name('ProjectDelete');
+
+    Route::post('/projects_admin_list/Restore-{id}', [ProjectController::class, 'restore'])->name('ProjectRestore');
+
+
+
+
+    Route::get('/adminpage/posts_admin_list', [PostsController::class, 'ShowTable'])->name('ShowTablePosts');
+
+    Route::get('/AddPagePost', [PostsController::class, 'AddPagePosts'])->name('AddPagePosts');
+
+    Route::post('/posts_admin_list/AddPage', [PostsController::class, 'AddPost'])->name('AddPost');
+
+    Route::get('/posts_admin_list/EditPagePost/{id}', [PostsController::class, 'EditPagePost'])->name('EditPagePost');
+
+    Route::post('/posts_admin_list/EditPage/Update-{id}', [PostsController::class, 'UpdatePost'])->name('UpdatePost');
+
+    Route::delete('/posts_admin_list/Delete-{id}', [PostsController::class, 'delete'])->name('PostDelete');
+
+    Route::post('/posts_admin_list/Restore-{id}', [PostsController::class, 'restore'])->name('PostRestore');
+
+
+
+
+    //Route::get('/adminpage/services_admin_list', [ServicesController::class, 'ShowTable'])->name('ShowTableServices');
+
+    Route::get('/AddPageService', [ServicesController::class, 'AddPageService'])->name('AddPageService');
+
+    Route::post('/services_admin_list/AddPage', [ServicesController::class, 'AddService'])->name('AddService');
+
+    Route::get('/services_admin_list/EditPageService/{id}', [ServicesController::class, 'EditPageService'])->name('EditPageService');
+
+    Route::post('/services_admin_list/UpdateService/Update-{id}', [ServicesController::class, 'UpdateService'])->name('UpdateService');
+
+    Route::delete('/services_admin_list/Delete-{id}', [ServicesController::class, 'delete'])->name('ServiceDelete');
+
+    Route::post('/services_admin_list/Restore-{id}', [ServicesController::class, 'restore'])->name('ServiceRestore');
+
+    Route::get('/AddPageSection', [ServicesTreeController::class, 'AddPageSection'])->name('AddPageSection');
+
+    Route::post('/services_admin_list/AddSection', [ServicesTreeController::class, 'AddSection'])->name('AddSection');
+
+
+    Route::get('/adminpage/services_admin_list/sections-{id}', [ServicesTreeController::class, 'tablesections'])->name('ShowTableServicesSections');
+
+    Route::get('/adminpage/services_admin_list/subsection-{id}', [ServicesTreeController::class, 'tablesubsections'])->name('ShowTableServicesSubsections');
+
+    Route::get('/services_admin_list/EditPageServiceSection/{id}', [ServicesTreeController::class, 'EditPageServiceSection'])->name('EditPageServiceSection');
+
+    Route::post('/services_admin_list/UpdateServiceSection/Update-{id}', [ServicesTreeController::class, 'UpdateServiceSection'])->name('UpdateServiceSection');
+
+    Route::delete('/services_admin_list/SectionDelete-{id}', [ServicesTreeController::class, 'delete'])->name('SectionServiceDelete');
+
+    Route::post('/services_admin_list/SectionRestore-{id}', [ServicesTreeController::class, 'restore'])->name('SectionServiceRestore');
+
+
+
+
+
+    Route::get('/adminpage/reviews_admin_list', [ReviewController::class, 'ShowTable'])->name('ShowTableReviews');
+
+    Route::get('/AddPageReview', [ReviewController::class, 'AddPageReview'])->name('AddPageReview');
+
+    Route::post('/reviews_admin_list/AddPage', [ReviewController::class, 'AddReview'])->name('AddReview');
+
+    Route::get('/reviews_admin_list/EditPageReview/{id}', [ReviewController::class, 'EditPageReview'])->name('EditPageReview');
+
+    Route::post('/reviews_admin_list/UpdateReview/Update-{id}', [ReviewController::class, 'UpdateReview'])->name('UpdateReview');
+
+    Route::delete('/reviews_admin_list/Delete-{id}', [ReviewController::class, 'delete'])->name('ReviewDelete');
+
+    Route::post('/reviews_admin_list/Restore-{id}', [ReviewController::class, 'restore'])->name('ReviewRestore');
+
+    /* Функционал Пользователя из админки */
+
+    Route::get('/adminpage/users_admin_list', [UserController::class, 'ShowTable'])->name('ShowTableUsers');
+
+    Route::get('/AddPageUser', [UserController::class, 'AddPageUser'])->name('AddPageUser');
+
+    Route::get('/users_admin_list/EditPageUser/{id}', [UserController::class, 'EditPageUser'])->name('EditPageUser');
+
+    Route::post('/users_admin_list/UpdateUser/Update-{id}', [UserController::class, 'UpdateUser'])->name('UpdateUser');
+
+    Route::delete('/users_admin_list/Delete-{id}', [UserController::class, 'delete'])->name('UserDelete');
+
+    Route::post('/users_admin_list/Restore-{id}', [UserController::class, 'restore'])->name('UserRestore');
+});

@@ -46,14 +46,14 @@
         </div>
         {{-- Тизеры --}}
         <div style="background: #ffffff">
-            <div class="mx-auto col-lg-10 col-12 row align-items-center py-5">
+            <div class="mx-auto col-lg-10 col-11 row align-items-center py-5">
                 {{-- Тизер 1 --}}
-                <div class="d-flex col-12 col-md-6 col-lg-3 my-3 justify-content-center">
-                    <div class="d-flex align-items-center justify-content-center col-md-2 col-lg-3"
+                <div class="d-flex col-12 col-md-6 col-lg-3 my-3 justify-content-lg-center justify-content-md-start px-0">
+                    <div class="d-flex align-items-center justify-content-lg-center justify-content-md-start col-lg-3 col-md-3 col-2"
                         style="height: 72px;">
                         <img src="img/Client.png" height="50" width="50">
                     </div>
-                    <div class="col-7 col-lg-9">
+                    <div class="col-md-7 col-lg-9 col-10">
                         <div class="fw-bold fs-17 text-roboto">Клиентоориентированность</div>
                         <div class="mt-2 text-muted fs-14 text-montserrat">
                             Создаем сайт индивидуально под каждого клиента, чтобы помочь вам быть
@@ -61,24 +61,24 @@
                     </div>
                 </div>
                 {{-- Тизер 2 --}}
-                <div class="d-flex col-12 col-md-6 col-lg-3 my-3 justify-content-center" style="">
-                    <div class="d-flex align-items-center justify-content-center col-md-2 col-lg-3"
+                <div class="d-flex col-12 col-md-6 col-lg-3 my-3 justify-content-lg-center justify-content-md-start px-0" style="">
+                    <div class="d-flex align-items-center justify-content-lg-center justify-content-md-start col-lg-3 col-md-3 col-2"
                         style="height: 72px;">
                         <img src="img/Cost.png" height="50" width="50">
                     </div>
-                    <div class="col-7 col-lg-9">
+                    <div class="col-md-7 col-lg-9 col-10">
                         <div class="fw-bold fs-17 text-roboto">Ценообразование</div>
                         <div class="mt-2 text-muted fs-14 text-montserrat">Расчитать стоимость и
                             подобрать необходимый функционал для вашего сайта вы можете в ПРАЙСЕ</div>
                     </div>
                 </div>
                 {{-- Тизер 3 --}}
-                <div class="d-flex col-12 col-md-6 col-lg-3 my-3 justify-content-center" style="">
-                    <div class="d-flex align-items-center justify-content-center col-md-2 col-lg-3"
+                <div class="d-flex col-12 col-md-6 col-lg-3 my-3 justify-content-lg-center justify-content-md-start px-0" style="">
+                    <div class="d-flex align-items-center justify-content-lg-center justify-content-md-start col-lg-3 col-md-3 col-2"
                         style="height: 72px;">
                         <img src="img/Tech.png" height="50" width="50">
                     </div>
-                    <div class="col-7 col-lg-9">
+                    <div class="col-md-7 col-lg-9 col-10">
                         <div class="fw-bold fs-17 text-roboto">Обслуживание</div>
                         <div class="mt-2 text-muted fs-14 text-montserrat">
                             По окончанию разработки сайта и сдачи вам, мы бесплатно обслуживаем вас в
@@ -86,12 +86,12 @@
                     </div>
                 </div>
                 {{-- Тизер 4 --}}
-                <div class="d-flex col-12 col-md-6 col-lg-3 my-3 justify-content-center" style="">
-                    <div class="d-flex align-items-center justify-content-center col-md-2 col-lg-3"
+                <div class="d-flex col-12 col-md-6 col-lg-3 my-3 justify-content-lg-center justify-content-md-start px-0" style="">
+                    <div class="d-flex align-items-center justify-content-lg-center justify-content-md-start col-lg-3 col-md-3 col-2"
                         style="height: 72px;">
                         <img src="img/Study.png" height="50" width="50">
                     </div>
-                    <div class="col-7 col-lg-9">
+                    <div class="col-md-7 col-lg-9 col-10">
                         <div class="fw-bold fs-17 text-roboto">Обучение персонала</div>
                         <div class="mt-2 text-muted fs-14 text-montserrat">
                             После сдачи вам сайта мы обучим, покажем и расскажем вам и вашему персоналу
@@ -128,13 +128,13 @@
                 class="my-5 d-flex justify-content-between row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
                 {{-- Карточка 1 --}}
                 <div class="col-lg-3 col-md-6 col-sm-12 my-4">
-                    <div class="border-custom px-2 bg-white">
-                        <div class="" style="height: 235px; background: #fafafa">
-                            <img class="" style="width: 100%; height: 100%; object-fit: cover;"
+                    <div class="border-custom bg-white">
+                        <div class="" style="height: 235px; background: #fafafa;border-top-left-radius: 4px; border-top-right-radius: 4px;">
+                            <img class="" style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: 4px; border-top-right-radius: 4px;"
                                 src="https://unternehmer.de/wp-content/uploads/2016/09/cms-baukausten-website-erstellen.jpg"
                                 height="235">
                         </div>
-                        <div class="col-10 mx-auto text-montserrat">
+                        <div class="col-9 mx-auto text-montserrat">
                             <div class="pt-5 card-title-over">
                                 Классический одностраничник</div>
                             <div class="my-3 card-title">Лендинговый сайт</div>
@@ -151,12 +151,12 @@
                 </div>
                 {{-- Карточка 2 --}}
                 <div class="col-lg-3 col-md-6 col-sm-12 my-4">
-                    <div class="border-custom px-2 bg-white">
-                        <div class="" style="height: 235px; background: #fafafa">
-                            <img class="" style="width: 100%; height: 100%; object-fit: cover;"
+                    <div class="border-custom bg-white">
+                        <div class="" style="height: 235px; background: #fafafa;border-top-left-radius: 4px; border-top-right-radius: 4px;">
+                            <img class="" style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: 4px; border-top-right-radius: 4px;"
                                 src="https://malevich1.ru/%D1%81%D0%B0%D0%B9%D1%822.png" height="235">
                         </div>
-                        <div class="col-10 mx-auto text-montserrat">
+                        <div class="col-9 mx-auto text-montserrat">
                             <div class="pt-5 card-title-over">
                                 Классический одностраничник</div>
                             <div class="my-3 card-title">Персональный сайт</div>
@@ -174,17 +174,17 @@
                 </div>
                 {{-- Карточка 3 --}}
                 <div class="col-lg-3 col-md-6 col-sm-12 my-4">
-                    <div class="border-custom px-2 bg-white">
-                        <div class="" style="height: 235px; background: #fafafa">
-                            <img class="" style="width: 100%; height: 100%; object-fit: cover;"
+                    <div class="border-custom bg-white">
+                        <div class="" style="height: 235px; background: #fafafa;border-top-left-radius: 4px; border-top-right-radius: 4px;">
+                            <img class="" style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: 4px; border-top-right-radius: 4px;"
                                 src="https://media.istockphoto.com/id/1257044925/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%86%D0%B8%D1%8F-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82-%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD%D0%BE%D0%B2-%D0%BD%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%B5.jpg?s=612x612&w=0&k=20&c=o0vz2sj9tctOimYrF11EdJ8ReLDlZHpElPCeSFGWN7g=">
                         </div>
-                        <div class="col-10 mx-auto text-montserrat">
+                        <div class="col-9 mx-auto text-montserrat">
                             <div class="pt-5 card-title-over">
                                 Классический одностраничник</div>
                             <div class="my-3 card-title">Интернет-магазин</div>
 
-                            <div class="title-preview">Увеличение продаж, повышение узнаваемости бренда, масштабирование бизнеса,
+                            <div class="title-preview">Увеличение продаж, масштабирование бизнеса,
                                 выход на новые рынки сбыта, возможность продажи из любой точки мира - это
                                 лишь малая часть того, что может сделать для вас интернет-магазин.
                             </div>
@@ -197,13 +197,13 @@
                 </div>
                 {{-- Карточка 4 --}}
                 <div class="col-lg-3 col-md-6 col-sm-12 my-4">
-                    <div class="border-custom px-2 bg-white">
-                        <div class="" style="height: 235px; background: #fafafa">
-                            <img class="" style="width: 100%; height: 100%; object-fit: cover;"
+                    <div class="border-custom bg-white">
+                        <div class="" style="height: 235px; background: #fafafa;border-top-left-radius: 4px; border-top-right-radius: 4px;">
+                            <img class="" style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: 4px; border-top-right-radius: 4px;"
                                 src="https://top3.pro/upload/iblock/2e4/2e4dac28c18cd1aa76f7111dc7ddf970.png"
                                 height="235">
                         </div>
-                        <div class="col-10 mx-auto text-montserrat">
+                        <div class="col-9 mx-auto text-montserrat">
                             <div class="pt-5 card-title-over">
                                 Классический одностраничник</div>
                             <div class="my-3 card-title">Корпоративный сайт</div>
@@ -419,7 +419,6 @@
                                         Хайбулин
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -589,26 +588,26 @@
                             Развивайте бизнес, масштабируйте и выстраивайте крепкие отношения с
                             клиентами благодаря удобному сайту.
                         </div>
-                        <div class="row row-cols-2 my-5" style="height: 300px;">
-                            <div class="col">
+                        <div class="row row-cols-lg-2 row-cols-md-2 row-cols-1 my-lg-5 mt-md-5 mt-5" style="min-height: 300px;">
+                            <div class="col md-lg-0 mb-md-0 mb-5">
                                 <div class="fw-bold text-primary text-roboto fs-22">
                                     Клиентоориентированность</div>
                                 <div class="title-preview mt-3">Создаем сайт индивидуально под каждого
                                     клиента, чтобы помочь вам быть лучшими среди конкурентов</div>
                             </div>
-                            <div class="col">
+                            <div class="col md-lg-0 mb-md-0 mb-5">
                                 <div class="fw-bold text-primary text-roboto fs-22">Ценообразование
                                 </div>
                                 <div class="title-preview mt-3">Расчитать стоимость и подобрать
                                     необходимый функционал для вашего сайта вы можете в ПРАЙСЕ</div>
                             </div>
-                            <div class="col">
+                            <div class="col md-lg-0 mb-md-0 mb-5">
                                 <div class="fw-bold text-primary text-roboto fs-22">Обслуживание
                                 </div>
                                 <div class="title-preview mt-3">По окончанию разработки сайта и сдачи
                                     вам, мы бесплатно обслуживаем вас в течении месяца</div>
                             </div>
-                            <div class="col">
+                            <div class="col md-lg-0 mb-md-0">
                                 <div class="fw-bold text-primary text-roboto fs-22">Обучение
                                     персонала</div>
                                 <div class="title-preview mt-3">После сдачи вам сайта мы обучим,
@@ -622,7 +621,7 @@
             {{-- Разделитель (полоска вместо <hr>) --}}
             <div class="col-12" style="height: 1.5px; background: #E5E5E5;"></div>
             {{-- Блок обратной связи --}}
-            <div class="d-flex align-items-center mt-5 mt-lg-0"
+            <div class="d-flex align-items-center pt-5 pt-lg-0"
                 style="min-height: 683px; background: url(https://allcorp3-demo.ru/upload/CAllcorp3/623/623f79835b25f993eec6a18e522c8422.jpg)">
                 <div
                     class="col-11 col-lg-10 mx-auto d-flex justify-content-center row row-cols-lg-2 row-cols-md-1">

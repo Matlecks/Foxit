@@ -42,7 +42,25 @@
 
                 </div>
                 <div class="col-4 d-flex justify-content-end">
-                    <button class="btn-add px-4 me-3">Добавить Услугу</button>
+                    <div class="btn-group" role="group">
+                        <a href="{{ route('AddPageService', $title = 'Услуга') }}"><button
+                                class="btn-add px-4 " type="button" data-bs-target="#AddEdit"
+                                data-bs-toggle="modal">Добавить Услугу</button></a>
+                        <div class="dropdown">
+                            <button class=" btn-addsection px-4 me-3" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                </svg>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item"
+                                        href="{{ route('AddPageSection') }}">Добавить раздел</a></li>
+                            </ul>
+                        </div>
+                    </div>
                     <button class="btn-export">Export</button>
                 </div>
             </div>
@@ -54,126 +72,320 @@
                             <input class="form-check-input" type="checkbox" value=""
                                 id="flexCheckDefault">
                         </td>
+                        <td class="col th-type-1"></td>
                         <td class="col th-type-1">ID</td>
                         <td class="col th-type-1">Название</td>
+                        <td class="col th-type-1">Активность</td>
                         <td class="col th-type-1">Категория</td>
-                        <td class="col th-type-1">Автор</td>
                         <td class="col th-type-1">Опубликовано</td>
                         <td class="col th-type-1">Статус</td>
-                        <td class="col th-type-1">Действия</td>
                     </tr>
-                    <tr class="">
-                        <td class="col th-type-1"><input class="form-check-input" type="checkbox"
-                                value="" id="flexCheckDefault"></td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-bolder">1</td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">Лендинг под ключ
-                        </td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">Одностраничники
-                        </td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">Андрей Андреевич
-                        </td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">04 марта 2023
-                        </td>
-                        <td class="col th-type-1">
-                            <div class="rounded-2 text-center fs-12 fw-bolder col-8"
-                                style="background-color: rgba(57,175,209,.18); color: #39AFD1">Без автора
-                            </div>
-                        </td>
-                        <td class="col th-type-1 d-flex justify-content-start" style="color:#6C757D;">
-                            <div class="ms-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                    <path
-                                        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                    <path fill-rule="evenodd"
-                                        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                                </svg>
-                            </div>
-                            <div class="ms-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                </svg>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col th-type-1"><input class="form-check-input" type="checkbox"
-                                value="" id="flexCheckDefault"></td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-bolder">2</td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">Интернет-магазин
-                        </td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">Интернет-магазины
-                        </td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">Дамир Хайбулин
-                        </td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">21 февраля 2023
-                        </td>
-                        <td class="col th-type-1">
-                            <div class="rounded-2 text-center fs-12 fw-bolder col-6"
-                                style="background-color: rgba(250, 92, 124, 0.25); color: rgb(250, 92, 124)">Удалено
-                            </div>
-                        </td>
-                        <td class="col th-type-1 d-flex justify-content-start" style="color:#6C757D;">
-                            <div class="ms-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    fill="currentColor" class="bi bi-pencil-square"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                    <path fill-rule="evenodd"
-                                        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                                </svg>
-                            </div>
-                            <div class="ms-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    fill="currentColor" class="bi bi-trash3-fill"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                </svg>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col th-type-1"><input class="form-check-input" type="checkbox"
-                                value="" id="flexCheckDefault"></td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-bolder">3</td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">Готовый Лендинг
-                        </td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">Одностраничники
-                        </td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">Дамир
-                            Хайбулин</td>
-                        <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">12 января 2023
-                        </td>
-                        <td class="col th-type-1">
-                            <div class="rounded-2 text-center fs-12 fw-bolder col-9"
-                                style="background-color: rgba(10,207,151,.18); color: #0acf97">Публикуется
-                            </div>
-                        </td>
-                        <td class="col th-type-1 d-flex justify-content-start" style="color:#6C757D;">
-                            <div class="ms-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    fill="currentColor" class="bi bi-pencil-square"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                    <path fill-rule="evenodd"
-                                        d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                                </svg>
-                            </div>
-                            <div class="ms-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    fill="currentColor" class="bi bi-trash3-fill"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                                </svg>
-                            </div>
-                        </td>
-                    </tr>
+                    @if (isset($sections))
+                        @foreach ($sections as $section)
+                            <tr class="">
+                                <td class="col th-type-1"><input class="form-check-input"
+                                        type="checkbox" value="" id="flexCheckDefault"></td>
+                                <td class="col th-type-1 dropdown">
+                                    <button type="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                        style="background: none; border-style: solid; border-width: 0px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor" class="bi bi-list"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                                        </svg>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item"
+                                                href="{{ route('EditPageServiceSection', $section->id) }}">Изменить</a>
+                                        </li>
+                                        <li>
+                                            <form
+                                                action="{{ route('SectionServiceRestore', $section->id) }}"
+                                                method="post">
+                                                @csrf
+                                                <button type="submit" class="dropdown-item"
+                                                    style="background:none; border-style: solid; border-width: 0px; border-color: none;">Активировать</button>
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form
+                                                action="{{ route('SectionServiceDelete', $section->id) }}"
+                                                method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="dropdown-item"
+                                                    style="background:none; border-style: solid; border-width: 0px; border-color: none;">Деактивировать</button>
+                                            </form>
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Удалить</a></li>
+                                    </ul>
+                                </td>
+                                <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-bolder">
+                                    {{ $section->id }}</td>
+                                <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">
+                                    <a href="{{ route('ShowTableServicesSubsections', $id = $section->id) }}"
+                                        class="d-flex align-items-center text-decoration-none text-grey-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                            height="20" fill="currentColor" class="bi bi-folder2"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9zM2.5 3a.5.5 0 0 0-.5.5V6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5zM14 7H2v5.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V7z" />
+                                        </svg>
+                                        {{ $section->title }}</a>
+                                </td>
+                                <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">
+                                    @if ($section->trashed())
+                                        Нет
+                                    @else
+                                        Да
+                                    @endif
+                                </td>
+                                <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">
+                                    Андрей
+                                    Андреевич
+                                </td>
+                                <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">
+                                    {{ $section->created_at }}
+                                </td>
+                                <td class="col th-type-1">
+                                    <div class="rounded-2 text-center fs-12 fw-bolder col-8"
+                                        style="background-color: rgba(57,175,209,.18); color: #39AFD1">
+                                        Без
+                                        автора
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                        @if ($services != null)
+                            @foreach ($services as $service)
+                                <tr class="">
+                                    <td class="col th-type-1"><input class="form-check-input"
+                                            type="checkbox" value="" id="flexCheckDefault">
+                                    </td>
+                                    <td class="col th-type-1 dropdown">
+                                        <button type="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false"
+                                            style="background: none; border-style: solid; border-width: 0px;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-list"
+                                                viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                                            </svg>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item"
+                                                    href="{{ route('EditPageService', $service->id) }}">Изменить</a>
+                                            </li>
+                                            <li>
+                                                <form
+                                                    action="{{ route('ServiceRestore', $service->id) }}"
+                                                    method="post">
+                                                    @csrf
+                                                    <button type="submit" class="dropdown-item"
+                                                        style="background:none; border-style: solid; border-width: 0px; border-color: none;">Активировать</button>
+                                                </form>
+                                            </li>
+                                            <li>
+                                                <form
+                                                    action="{{ route('ServiceDelete', $service->id) }}"
+                                                    method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="dropdown-item"
+                                                        style="background:none; border-style: solid; border-width: 0px; border-color: none;">Деактивировать</button>
+                                                </form>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Удалить</a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-bolder">
+                                        {{ $service->id }}</td>
+                                    <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">
+                                        <a {{-- href="{{ route('ShowTableServices', $id = $service->id) }}" --}}>
+                                            {{ $service->title }}</a>
+                                    </td>
+                                    <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">
+                                        @if ($service->trashed())
+                                            Нет
+                                        @else
+                                            Да
+                                        @endif
+                                    </td>
+                                    <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">
+                                        Андрей
+                                        Андреевич
+                                    </td>
+                                    <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">
+                                        {{ $service->created_at }}
+                                    </td>
+                                    <td class="col th-type-1">
+                                        <div class="rounded-2 text-center fs-12 fw-bolder col-8"
+                                            style="background-color: rgba(57,175,209,.18); color: #39AFD1">
+                                            Без
+                                            автора
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @endif
+                    @elseif($subsections)
+                        @foreach ($subsections as $subsection)
+                            <tr class="">
+                                <td class="col th-type-1"><input class="form-check-input"
+                                        type="checkbox" value="" id="flexCheckDefault"></td>
+                                <td class="col th-type-1 dropdown">
+                                    <button type="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                        style="background: none; border-style: solid; border-width: 0px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor" class="bi bi-list"
+                                            viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                                        </svg>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item"
+                                                href="{{ route('EditPageServiceSection', $subsection->id) }}">Изменить</a>
+                                        </li>
+                                        <li>
+                                            <form
+                                                action="{{ route('SectionServiceRestore', $subsection->id) }}"
+                                                method="post">
+                                                @csrf
+                                                <button type="submit" class="dropdown-item"
+                                                    style="background:none; border-style: solid; border-width: 0px; border-color: none;">Активировать</button>
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form
+                                                action="{{ route('SectionServiceDelete', $subsection->id) }}"
+                                                method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="dropdown-item"
+                                                    style="background:none; border-style: solid; border-width: 0px; border-color: none;">Деактивировать</button>
+                                            </form>
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Удалить</a></li>
+                                    </ul>
+                                </td>
+                                <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-bolder">
+                                    {{ $subsection->id }}</td>
+                                <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">
+                                    <a href="{{ route('ShowTableServicesSubsections', $id = $subsection->id) }}"
+                                        class="d-flex align-items-center text-decoration-none text-grey-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                            height="20" fill="currentColor" class="bi bi-folder2"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9zM2.5 3a.5.5 0 0 0-.5.5V6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5zM14 7H2v5.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V7z" />
+                                        </svg>
+                                        {{ $subsection->title }}
+                                    </a>
+                                </td>
+                                <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">
+                                    @if ($subsection->trashed())
+                                        Нет
+                                    @else
+                                        Да
+                                    @endif
+                                </td>
+                                <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">
+                                    Андрей
+                                    Андреевич
+                                </td>
+                                <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">
+                                    {{ $subsection->created_at }}
+                                </td>
+                                <td class="col th-type-1">
+                                    <div class="rounded-2 text-center fs-12 fw-bolder col-8"
+                                        style="background-color: rgba(57,175,209,.18); color: #39AFD1">
+                                        Без
+                                        автора
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                        @if ($services != null)
+                            @foreach ($services as $service)
+                                <tr class="">
+                                    <td class="col th-type-1"><input class="form-check-input"
+                                            type="checkbox" value="" id="flexCheckDefault">
+                                    </td>
+                                    <td class="col th-type-1 dropdown">
+                                        <button type="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false"
+                                            style="background: none; border-style: solid; border-width: 0px;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                                height="16" fill="currentColor" class="bi bi-list"
+                                                viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                                            </svg>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item"
+                                                    href="{{ route('EditPageService', $service->id) }}">Изменить</a>
+                                            </li>
+                                            <li>
+                                                <form
+                                                    action="{{ route('ServiceRestore', $service->id) }}"
+                                                    method="post">
+                                                    @csrf
+                                                    <button type="submit" class="dropdown-item"
+                                                        style="background:none; border-style: solid; border-width: 0px; border-color: none;">Активировать</button>
+                                                </form>
+                                            </li>
+                                            <li>
+                                                <form
+                                                    action="{{ route('ServiceDelete', $service->id) }}"
+                                                    method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="dropdown-item"
+                                                        style="background:none; border-style: solid; border-width: 0px; border-color: none;">Деактивировать</button>
+                                                </form>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Удалить</a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-bolder">
+                                        {{ $service->id }}</td>
+                                    <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">
+                                        <a {{-- href="{{ route('ShowTableServices', $id = $service->id) }}" --}}>
+                                            {{ $service->title }}</a>
+                                    </td>
+                                    <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">
+                                        @if ($service->trashed())
+                                            Нет
+                                        @else
+                                            Да
+                                        @endif
+                                    </td>
+                                    <td class="col th-type-1 text-grey-3 text-nunito fs-15 fw-bolder">
+                                        Андрей
+                                        Андреевич
+                                    </td>
+                                    <td class="col th-type-1 text-grey-3 text-nunito fs-14 fw-light">
+                                        {{ $service->created_at }}
+                                    </td>
+                                    <td class="col th-type-1">
+                                        <div class="rounded-2 text-center fs-12 fw-bolder col-8"
+                                            style="background-color: rgba(57,175,209,.18); color: #39AFD1">
+                                            Без
+                                            автора
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @endif
+                    @endif
                 </table>
             </div>
         </div>

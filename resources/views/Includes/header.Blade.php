@@ -1,6 +1,6 @@
 @section('header')
     {{-- Верхнее меню --}}
-    <div class="header mx-auto col-12 col-lg-9 navbar-expand-lg" >
+    <div class="header mx-auto col-12 col-lg-9 navbar-expand-lg">
         <div class="d-flex justify-content-lg-center justify-content-md-between align-items-center text-center text-white navbar-expand-lg"
             style="min-height: 66px;">
             {{-- Бургер --}}
@@ -33,28 +33,74 @@
                         data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body text-start mx-4">
-                    <ul class="navbar-nav accordion accordion-flush">
+                    <ul class="navbar-nav">
                         <li class="nav-item mt-4">
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="flush-headingOne">
-                                    <button
-                                        class="accordion-button p-0 collapsed fw-bolder bg-dark text-white text-monserrat fs-18"
-                                        type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                        aria-controls="flush-collapseOne">
-                                        Компания
-                                    </button>
-                                </h2>
+                                <button
+                                    class="accordion-button p-0 collapsed fw-bolder bg-dark text-white text-monserrat fs-18"
+                                    type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                    aria-controls="flush-collapseOne">
+                                    Компания
+                                </button>
                                 <div id="flush-collapseOne" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingOne"
                                     data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">Placeholder content for this
-                                        accordion, which is intended to demonstrate the
-                                        <code>.accordion-flush</code> class. This is the third
-                                        item's accordion body. Nothing more exciting happening here
-                                        in terms of content, but just filling up the space to make
-                                        it look, at least at first glance, a bit more representative
-                                        of how this would look in a real-world application.
+                                    <div class="accordion-body mt-2">
+                                        {{-- О компании --}}
+                                        <a class="text-decor-none" href="{{ route('company') }}">
+                                            <div class="d-flex text-nunito col-10 ps-3 py-2"
+                                                style="color: #BCCEE4;">
+                                                <div class="col-8 text-nunito fs-15 fw-light">О компании
+                                                </div>
+                                                <div
+                                                    class="col-2 d-flex justify-content-end align-items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        width="16" height="16"
+                                                        fill="currentColor" class="bi bi-chevron-right"
+                                                        viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd"
+                                                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        {{-- Сотрудники --}}
+                                        <a class="text-decor-none" href="">
+                                            <div class="d-flex text-nunito col-10 ps-3 py-2"
+                                                style="color: #BCCEE4;">
+                                                <div class="col-8 text-nunito fs-15 fw-light">Сотрудники
+                                                </div>
+                                                <div
+                                                    class="col-2 d-flex justify-content-end align-items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        width="16" height="16"
+                                                        fill="currentColor" class="bi bi-chevron-right"
+                                                        viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd"
+                                                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        {{-- Отзывы --}}
+                                        <a class="text-decor-none" href="">
+                                            <div class="d-flex text-nunito col-10 ps-3 py-2"
+                                                style="color: #BCCEE4;">
+                                                <div class="col-8 text-nunito fs-15 fw-light">Отзывы
+                                                </div>
+                                                <div
+                                                    class="col-2 d-flex justify-content-end align-items-center">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        width="16" height="16"
+                                                        fill="currentColor" class="bi bi-chevron-right"
+                                                        viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd"
+                                                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -62,15 +108,16 @@
                         <li class="nav-item mt-4">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-headingTwo">
-                                    <button
-                                        class="accordion-button p-0 collapsed fw-bolder bg-dark text-white text-monserrat fs-18"
-                                        type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseTwo" aria-expanded="false"
-                                        aria-controls="flush-collapseTwo">
-                                        Услуги
-                                    </button>
+                                    <a href="{{ route('servicessections') }}"
+                                        class="text-decoration-none text-white"><button
+                                            class="accordion-button p-0 collapsed fw-bolder bg-dark text-white text-monserrat fs-18"
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                            aria-controls="flush-collapseTwo">
+                                            Услуги
+                                        </button></a>
                                 </h2>
-                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                {{-- <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingTwo"
                                     data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">Placeholder content for this
@@ -81,21 +128,22 @@
                                         it look, at least at first glance, a bit more representative
                                         of how this would look in a real-world application.
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </li>
                         <li class="nav-item mt-4">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-headingThree">
-                                    <button
-                                        class="accordion-button p-0 collapsed fw-bolder bg-dark text-white text-monserrat fs-18"
-                                        type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseThree" aria-expanded="false"
-                                        aria-controls="flush-collapseThree">
-                                        Проекты
-                                    </button>
+                                    <a href="{{ route('projects') }}"
+                                        class="text-decoration-none text-white"><button
+                                            class="accordion-button p-0 collapsed fw-bolder bg-dark text-white text-monserrat fs-18"
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapseThree"
+                                            aria-expanded="false" aria-controls="flush-collapseThree">
+                                            Проекты
+                                        </button></a>
                                 </h2>
-                                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                {{-- <div id="flush-collapseThree" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingThree"
                                     data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">Placeholder content for this
@@ -106,21 +154,22 @@
                                         it look, at least at first glance, a bit more representative
                                         of how this would look in a real-world application.
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </li>
                         <li class="nav-item mt-4">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-headingFore">
-                                    <button
-                                        class="accordion-button p-0 collapsed fw-bolder bg-dark text-white text-monserrat fs-18"
-                                        type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseFore" aria-expanded="false"
-                                        aria-controls="flush-collapseFore">
-                                        Новости
-                                    </button>
+                                    <a href="{{ route('news') }}"
+                                        class="text-decoration-none text-white"><button
+                                            class="accordion-button p-0 collapsed fw-bolder bg-dark text-white text-monserrat fs-18"
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapseFore" aria-expanded="false"
+                                            aria-controls="flush-collapseFore">
+                                            Новости
+                                        </button></a>
                                 </h2>
-                                <div id="flush-collapseFore" class="accordion-collapse collapse"
+                                {{-- <div id="flush-collapseFore" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingFore"
                                     data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">Placeholder content for this
@@ -131,10 +180,12 @@
                                         it look, at least at first glance, a bit more representative
                                         of how this would look in a real-world application.
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </li>
-                        <li class="nav-item fw-bolder text-monserrat fs-18 mt-4">Контакты</li>
+                        <a href="{{ route('contacts') }}" class="text-decoration-none text-white">
+                            <li class="nav-item fw-bolder text-monserrat fs-18 mt-4">Контакты</li>
+                        </a>
                     </ul>
                     <button type="button" class="btn btn-primary border-0 col-12 fw-bold my-5"
                         style="background: #365EDC;">Подать заявку</button>
@@ -330,14 +381,29 @@
                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                     </svg>
                 </div>
-                <div class="col-lg-2 col-md-1 d-flex align-items-center justify-content-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
-                        fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
-                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                        <path
-                            d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z" />
-                    </svg>
-                </div>
+                @if (Auth::check())
+                    <a href="{{ route('cabinet') }}" class="text-decoration-none text-white">
+                        <div class="col-lg-12 col-md-1 d-flex align-items-center justify-content-center"
+                            type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                <path
+                                    d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z" />
+                            </svg>
+                        </div>
+                    </a>
+                @else
+                    <div class="col-lg-2 col-md-1 d-flex align-items-center justify-content-center"
+                        type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                            fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path
+                                d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z" />
+                        </svg>
+                    </div>
+                @endif
                 <div class="col-lg-8 col-md-8 d-flex justify-content-end">
                     <button type="button" class="btn btn-primary border-0 col-10 fw-bold"
                         style="background: #365EDC;">Подать заявку</button>
@@ -345,22 +411,52 @@
             </div>
         </div>
         {{-- Разделы меню --}}
-        <div class="text-center fw-bolder fs-12 text-montserrat text-white py-2 justify-content-center align-items-center collapse navbar-collapse"
+        @include('top_menu')
+        {{-- <div class="text-center fw-bolder fs-12 text-montserrat text-white py-2 justify-content-center align-items-center collapse navbar-collapse"
             style="letter-spacing: 0.96px; min-height: 66px;">
             <a class="col-2 text-white" style="text-decoration: none;" href="{{ route('company') }}">
                 <div class="col-12">КОМПАНИЯ</div>
             </a>
-            <a class="col-2 text-white" style="text-decoration: none;" href="{{ route('services') }}">
+            <a class="col-2 text-white" style="text-decoration: none;"
+                href="{{ route('services') }}">
                 <div class="col-12">УСЛУГИ</div>
             </a>
-            <a class="col-2 text-white" style="text-decoration: none;" href="{{ route('projects') }}">
+            <a class="col-2 text-white" style="text-decoration: none;"
+                href="{{ route('projects') }}">
                 <div class="col-12">ПРОЕКТЫ</div>
             </a>
             <a class="col-2 text-white" style="text-decoration: none;" href="{{ route('news') }}">
                 <div class="col-12">НОВОСТИ</div>
             </a>
-            <a class="col-2 text-white" style="text-decoration: none;" href="{{ route('contacts') }}">
+            <a class="col-2 text-white" style="text-decoration: none;"
+                href="{{ route('contacts') }}">
                 <div class="col-12">КОНТАКТЫ</div>
             </a>
-        </div>
+        </div> --}}
+        {{-- Модалка логина/регистрации --}}
+        {{-- <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" id="">
+            ...
+        </div> --}}
+
+        {{-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Understood</button>
+                </div>
+              </div>
+            </div>
+          </div> --}}
+
+
+
+
     </div>

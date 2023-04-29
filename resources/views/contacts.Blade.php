@@ -2,31 +2,30 @@
 
 @section('content')
     <div class="mt-for-header" style="background: #ffffff;">
-        <div class="mx-auto col-11 col-lg-9">
+        <div class="mx-auto col-11 col-lg-10">
             <div class="col-lg-4 col-sm-6 col-md-10 pt-5 title">Контакты</div>
             <div class="mt-2 mb-5 title-over">Главная — Контакты
             </div>
         </div>
-        <div class="mx-auto col-11 col-lg-9 d-lg-flex row-col-lg-2 row-cols-1 pb-5">
+        <div class="mx-auto col-11 col-lg-10 d-lg-flex row-col-lg-2 row-cols-1 pb-5">
             <div class="col-12 col-lg-9">
                 <div class="bg-secondary rounded-1" style=" margin: 0; width: 100%; height: 500px;">
                     <div style="position:relative;overflow:hidden;"><a
-                            href="https://yandex.ru/maps/172/ufa/?utm_medium=mapframe&utm_source=maps"
-                            style="color:#eee;font-size:12px;position:absolute;top:0px;">Уфа</a><a
-                            href="https://yandex.ru/maps/172/ufa/house/verkhnetorgovaya_ploshchad_1/YUwYfwNkSEIDQFtufXtzdXRgZw==/?indoorLevel=1&ll=55.944526%2C54.724902&utm_medium=mapframe&utm_source=maps&z=18"
-                            style="color:#eee;font-size:12px;position:absolute;top:14px;">Верхнеторговая
-                            площадь, 1 — Яндекс Карты</a><iframe
-                            src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=55.944526%2C54.724902&mode=poi&poi%5Bpoint%5D=55.944252%2C54.724755&z=18"
+                            href="https://yandex.ru/maps/org/kvartal/49212933977/?utm_medium=mapframe&utm_source=maps"
+                            style="color:#eee;font-size:12px;position:absolute;top:0px;">Квартал</a><a
+                            href="https://yandex.ru/maps/239/sochi/category/business_center/184107509/?utm_medium=mapframe&utm_source=maps"
+                            style="color:#eee;font-size:12px;position:absolute;top:14px;">Бизнес-центр в
+                            Сочи</a><iframe
+                            src="https://yandex.ru/map-widget/v1/?ll=39.725189%2C43.590309&mode=search&oid=49212933977&ol=biz&sctx=ZAAAAAgBEAAaKAoSCe%2FjaI6s3ENAESgMyjSaykVAEhIJhCugUE8f0j8R18OXiSKkvj8iBgABAgMEBSgKOABA8YAHSAFiIGFkZF9zbmlwcGV0PXBob3RvX2VtYmVkZGluZ3MvMi54YiNyZW1vdmVfc25pcHBldD1waG90b19lbWJlZGRpbmdzLzEueGIzcmVhcnI9c2NoZW1lX0xvY2FsL0dlby9Db2xsZWN0aW9ucy9FbmFibGVkTWl4PWZhbHNlagJydZ0BzcxMPaABAKgBAL0BXIL%2B3MIBBtmOx6q3AeoBAPIBAPgBAIICE9Cx0YYg0LrQstCw0YDRgtCw0LuKAgCSAgCaAgxkZXNrdG9wLW1hcHM%3D&sll=39.725189%2C43.590309&sspn=0.003353%2C0.001417&text=%D0%B1%D1%86%20%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B0%D0%BB&z=19.2"
                             width=100% height="500" frameborder="1" allowfullscreen="true"
                             style="position:relative;"></iframe></div>
                 </div>
                 <div class="mt-5 title-preview">
-                    <div class="text-montserrat fs-22 text-dark fw-bolder">Региональные
-                        представительства</div>
+                    <div class="text-montserrat fs-22 text-dark fw-bolder">Расположение</div>
                     <div class="mt-3">
-                        Наша компания имеет широкую сеть региональных представительств и дилеров. Вы
-                        можете обратиться в ближайший к Вам офис для получения дополнительных
-                        консультаций.
+                        В нашей компании все сотрудники работают удаленно из разных городов России и мы
+                        не располагаемся в офисе. Если вам необходимо встретиться лично, то встречи
+                        проводятся по уговоренному адресу города Сочи
                     </div>
                     <div class="text-roboto fs-22 text-dark fw-bolder mt-5 mb-4 d-none">Республика
                         Башкортостан
@@ -72,9 +71,11 @@
                             </div>
                         </div>
                         <div class="col-3 ms-5 text-montserrat fw-light fs-15 text-dark">
-                            <div class="">+7 (000) 000-00-00</div>
-                            <div class="">+7 (000) 000-00-01</div>
-                            <div class="mt-2">info@site.ru</div>
+                            <div class=""><a href="tel:+79279358355">+7 (927) 935-83-55</a></div>
+                            {{-- <div class="">+7 (000) 000-00-01</div> --}}
+                            <div class="mt-2"><a
+                                    href="mailto:damir-khaybulin@mail.ru">damir-khaybulin@mail.ru</a>
+                            </div>
                         </div>
                         <div class="col-2 text-primary text-center">На карте</div>
                         <div class="col-1 text-end">
@@ -93,30 +94,31 @@
                     <div
                         class="border rounded-1 flex-lg-column d-md-flex align-items-md-top p-lg-0 p-md-4 p-4">
                         <div class="col-lg-12 col-md-6 rounded-1 d-flex align-items-end"
-                            style="height: 235px; background: url(https://allcorp3-demo.ru/upload/medialibrary/bf7/branch-2.jpg) no-repeat; max-width:100%;
-                            max-height:100%; background-size: contain">
+                            style="height: 235px; background: url(https://avatars.mds.yandex.net/get-altay/5587495/2a0000017de42ee855d1753692701dbc33a2/XXXL) no-repeat; max-width:100%;
+                            max-height:100%; background-size: cover">
                             <div
-                                class="text-white text-montserrat fw-light col-9 ps-4 py-3 d-md-none d-lg-block">
+                                class="text-white text-montserrat fw-light col-9 ps-4 py-4 d-md-none d-lg-block">
                                 <div class="fs-13">Центральный офис</div>
-                                <div class="fs-18">Москва,ул.Пушкина 21,3 этаж, офис 41</div>
+                                <div class="fs-18">Сочи, ул. Навагинская 13/1, микрорайон Центральный</div>
                             </div>
                         </div>
                         <div class="col-lg-10 col-md-5 mx-auto py-lg-3 py-md-0">
-                            <div
-                                class="text-dark col-12 pb-3 d-lg-none d-md-block">
+                            <div class="text-dark col-12 pb-3 d-lg-none d-md-block">
                                 <div class="card-date">Центральный офис</div>
-                                <div class="card-title fs-18">Москва, ул. Пушкина 21, 3 этаж, офис 41</div>
+                                <div class="card-title fs-18">Сочи, ул. Навагинская 13/1, микрорайон Центральный
+                                </div>
                             </div>
                             <div class="card-date mt-lg-3 mt-md-0" style="color: #999999">Режим работы
                             </div>
                             <div class="card-title-preview mt-1">Пн. – Пт.: с 9:00 до 18:00</div>
                             <div class="card-date mt-3" style="color: #999999">Телефон
                             </div>
-                            <div class="card-title-preview mt-1">+7 000 000-00-22</div>
-                            <div class="card-title-preview mt-1">+7 000 000-00-11</div>
+                            <div class="card-title-preview mt-1"><a href="tel:+79279358355" class="card-title-preview text-decoration-none text-dark">+7 (927) 935-83-55</a></div>
+                            {{-- <div class="card-title-preview mt-1">+7 000 000-00-11</div> --}}
                             <div class="card-date mt-3" style="color: #999999">E-mail
                             </div>
-                            <div class="card-title-preview mt-1">no-reply@aspro-demo.ru</div>
+                            <div class="card-title-preview mt-1"><a
+                                href="mailto:damir-khaybulin@mail.ru" class="card-title-preview text-decoration-none text-dark">damir-khaybulin@mail.ru</a></div>
                             <a href="#"
                                 class="btn btn-outline-primary mt-4 mb-3 col-12 fw-bolder text-montserrat fs-14">Написать
                                 сообщение</a>
