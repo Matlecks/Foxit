@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('details_text')->nullable();
             $table->text('details_image')->nullable();
             $table->text('cost')->nullable();
+            $table->text('category')->nullable();
             $table->text('SEOTitle')->nullable();
             $table->text('SEOKeys')->nullable();
             $table->text('SEODescription')->nullable();

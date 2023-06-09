@@ -25,9 +25,9 @@ return new class extends Migration
             $table->foreignId('section_id')->nullable()->constrained('services_trees');
         });
 
-        Schema::table('orders', function (Blueprint $table) {
+        /* Schema::table('orders', function (Blueprint $table) {
             $table->foreignId('services_id')->nullable()->constrained('services');
-        });
+        }); */
 
         Schema::table('users', function (Blueprint $table) {
             //$table->foreignId('projects_id')->nullable()->constrained('projects');

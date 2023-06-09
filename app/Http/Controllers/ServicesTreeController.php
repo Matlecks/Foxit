@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BaseInfo;
 use App\Models\Services_tree;
 use App\Models\Services;
 
@@ -14,8 +15,9 @@ class ServicesTreeController extends Controller
     {
         $sections = Services_tree::where('parent_id', '=', 1)->get();
         $services = Services::where('section_id', '=', 1)->get();
+        $contacts = BaseInfo::first();
 
-        return view('services', compact('sections', 'services'));
+        return view('services', compact('sections', 'services','contacts'));
     }
 
     public function indexsubsections($id)
@@ -23,8 +25,9 @@ class ServicesTreeController extends Controller
 
         $subsections = Services_tree::where('parent_id', '=', $id)->get();
         $services = Services::where('section_id', '=', $id)->get();
+        $contacts = BaseInfo::first();
 
-        return view('services', compact('subsections', 'services'));
+        return view('services', compact('subsections', 'services','contacts'));
     }
 
     public function tablesections()

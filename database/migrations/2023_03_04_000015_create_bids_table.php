@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('bids', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            //$table->foreignId('services_id')->constrained('services');
-            $table->string('status');
-            $table->text('comment');
+            $table->string('name')->nullable();
+            $table->text('phone')->nullable();
+            $table->string('email')->nullable();
+            $table->text('interesting')->nullable();
+            $table->string('status')->nullable();
+            $table->string('form')->nullable();
+            $table->text('message')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
@@ -32,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('bids');
     }
 };

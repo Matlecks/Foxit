@@ -156,9 +156,27 @@
                                 <option value="{{ $section->id }}">{{ $section->title }}</option>
                             @endforeach
                         </select>
-                        <label for="form-login" class="form-label title-over mt-5">Цена</label>
+                        <label for="form-login"
+                            class="form-label title-over mt-5">Цена</label>
                         <input class="form-control form-login-1 w-25" type="text" id="form-login"
                             name="cost">
+                        <label for="form-login"
+                            class="form-label title-over mt-5">Категория</label>
+                        <input class="form-control form-login-1 w-25" type="text" id="form-login"
+                            name="category">
+                    </div>
+                @elseif($title == 'Проект')
+                    <div class="accordion-body mt-2">
+                        <label for="form-login" class="form-label title-over mt-5">Название</label>
+                        <input class="form-control form-login-1" type="text" id="form-login"
+                            name="title">
+                        <label for="form-login" class="form-label title-over mt-5">Сфера</label>
+                        <input class="form-control form-login-1" type="text" id="form-login"
+                            name="sphere">
+                        <label for="form-login" class="form-label title-over mt-5">Ссылка на
+                            сайт</label>
+                        <input class="form-control form-login-1" type="text" id="form-login"
+                            name="link">
                     </div>
                 @else
                     <div class="accordion-body mt-2">

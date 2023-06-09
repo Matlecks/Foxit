@@ -11,7 +11,8 @@
                     <img src="/storage/{{ $post->details_image }}"
                         style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: 4px; border-bottom-left-radius: 4px;">
                 @else
-                    <div style="width: 100%; height: 500px; background: #fafafa; border-top-left-radius: 4px; border-bottom-left-radius: 4px;">
+                    <div
+                        style="width: 100%; height: 500px; background: #fafafa; border-top-left-radius: 4px; border-bottom-left-radius: 4px;">
                     </div>
                 @endif
             </div>
@@ -34,7 +35,8 @@
                 <div class="text-end">
                     <button type="submit"
                         class="rounded-1 fs-14 fw-bold text-montserrat px-4 py-3 text-white"
-                        style="border-style: solid; border-width: 1px; border-color: #365EDC; color: #365EDC; background: #365EDC;">Задать
+                        style="border-style: solid; border-width: 1px; border-color: #365EDC; color: #365EDC; background: #365EDC;"
+                        data-bs-toggle="modal" data-bs-target="#askquestion">Задать
                         вопрос</button>
                 </div>
             </div>

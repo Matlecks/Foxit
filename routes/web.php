@@ -8,6 +8,10 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\IndexPageController;
 use App\Http\Controllers\ServicesTreeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\BidController;
+use App\Http\Controllers\BaseInfoController;
+use App\Http\Controllers\SeoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,43 +24,55 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [IndexPageController::class,'index'])->name('main');
+Route::get('/', [IndexPageController::class, 'index'])->name('main');
 
 //Route::get('/test',[ServicesTreeController::class,'index'])->name('test');
 
 Route::view('/company', 'company')->name('company');
 
-Route::get('/services', [ServicesTreeController::class,'indexsections'])->name('servicessections');
+Route::get('/services', [ServicesTreeController::class, 'indexsections'])->name('servicessections');
 
-Route::get('/services/{title}', [ServicesTreeController::class,'indexsubsections'])->name('servicessubsections');
+Route::get('/services/{title}', [ServicesTreeController::class, 'indexsubsections'])->name('servicessubsections');
 
 Route::get('/services/asdsd/{id}', [ServicesController::class, 'detail'])->name('ShowDetailPage');
 
-Route::get('/projects', [ProjectController::class,'index'])->name('projects');
+Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
+
+Route::get('/projects/year-{date}', [ProjectController::class, 'index_filter'])->name('projects_filter');
 
 Route::get('/projects/{id}', [ProjectController::class, 'detail'])->name('ShowProjectDetailPage');
 
-Route::get('/news', [PostsController::class,'index'])->name('news');
+Route::get('/news', [PostsController::class, 'index'])->name('news');
 
-Route::get('/news/{id}', [PostsController::class,'detail'])->name('new_detail');
+Route::get('/news/year-{date}', [PostsController::class, 'index_filter'])->name('news_filter');
 
-Route::view('/contacts', 'contacts')->name('contacts');
+Route::get('/news/{id}', [PostsController::class, 'detail'])->name('new_detail');
+
+Route::get('/contacts', [IndexPageController::class, 'show_contacts'])->name('contacts');
 
 Route::view('/registration', 'registrate')->name('registrate_page');
 
-Route::view('/cabinet', 'cabinet')->name('cabinet');
+Route::get('/cabinet', [IndexPageController::class, 'show_cabinet'])->name('cabinet');
 
 Route::post('/registrate', [UserController::class, 'UserAdd'])->name('UserAdd');
 
 Route::post('/auth', [UserController::class, 'UserAuth'])->name('UserAuth');
 
-Route::view('/about','about')->name('about');
+Route::get('/about', [IndexPageController::class, 'show_company_about'])->name('about');
 
-Route::get('/personal',[UserController::class,'index'])->name('personal');
+Route::get('/personal', [UserController::class, 'index'])->name('personal');
 
-Route::get('/personal/{id}', [UserController::class,'detail'])->name('personal_detail');
+Route::get('/personal/{id}', [UserController::class, 'detail'])->name('personal_detail');
 
-Route::get('/reviews',[ReviewController::class,'index'])->name('reviews');
+Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews');
+
+Route::post('/askquestion', [BidController::class, 'askquestion'])->name('askquestion');
+
+Route::post('/takerequest', [BidController::class, 'takerequest'])->name('takerequest');
+
+Route::post('/writemessage', [BidController::class, 'writemessage'])->name('writemessage');
+
+Route::view('/message', 'index');
 
 Route::middleware('role.check')->group(function () {
 
@@ -67,6 +83,8 @@ Route::middleware('role.check')->group(function () {
     Route::view('/dashboard', 'dashboard')->name('dashboard');
 
 
+
+    Route::get('/adminpage/bid_admin_list', [BidController::class, 'ShowTable'])->name('bid_admin_list');
 
 
 
@@ -166,4 +184,26 @@ Route::middleware('role.check')->group(function () {
     Route::delete('/users_admin_list/Delete-{id}', [UserController::class, 'delete'])->name('UserDelete');
 
     Route::post('/users_admin_list/Restore-{id}', [UserController::class, 'restore'])->name('UserRestore');
+
+    /* Функционал настройки контактов */
+
+    Route::get('/adminpage/contact_admin_list', [BaseInfoController::class, 'show_contacts'])->name('ShowContacts');
+
+    Route::get('/adminpage/contact_admin_list/update', [BaseInfoController::class, 'update_contacts'])->name('UpdateContacts');
+
+    /* Функционал соцсетей */
+
+    Route::get('/adminpage/socseti_admin_list', [BaseInfoController::class, 'show_socseti'])->name('ShowSocseti');
+
+    Route::get('/adminpage/socseti_admin_list/update', [BaseInfoController::class, 'update_socseti'])->name('UpdateSocseti');
+
+    /* Функционал Сео */
+
+    Route::get('/adminpage/Seo',[SeoController::class,'seo_admin_index'])->name('seo_index');
+
+    Route::get('/adminpage/Seo/robots', [SeoController::class, 'show_robots'])->name('ShowRobots');
+
+    Route::post('/adminpage/Seo/robots/update', [SeoController::class, 'save'])->name('UpdateRobots');
+
+
 });

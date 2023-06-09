@@ -117,7 +117,8 @@
                                 </div>
                             </a>
                             {{-- Услуги --}}
-                            <a class="text-decor-none" href="{{ route('ShowTableServicesSections',$id = 0) }}">
+                            <a class="text-decor-none"
+                                href="{{ route('ShowTableServicesSections', $id = 0) }}">
                                 <div class="d-flex text-nunito col-10 ps-3 pb-4"
                                     style="color: #BCCEE4;">
                                     <div
@@ -247,27 +248,31 @@
                         data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
                             {{-- Seo --}}
-                            <div class="d-flex text-nunito col-10 ps-3 pt-4 pb-4"
-                                style="color: #BCCEE4;">
-                                <div class="col-2 d-flex justify-content-start align-items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor"
-                                        class="bi bi-briefcase" viewBox="0 0 16 16">
-                                        <path
-                                            d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z" />
-                                    </svg>
+                            <a class="text-decor-none" href="{{ route('seo_index') }}">
+                                <div class="d-flex text-nunito col-10 ps-3 pt-4 pb-4"
+                                    style="color: #BCCEE4;">
+                                    <div
+                                        class="col-2 d-flex justify-content-start align-items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor"
+                                            class="bi bi-briefcase" viewBox="0 0 16 16">
+                                            <path
+                                                d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z" />
+                                        </svg>
+                                    </div>
+                                    <div class="col-8 text-nunito fs-15 fw-light">
+                                        SEO-оптимизация</div>
+                                    <div
+                                        class="col-2 d-flex justify-content-end align-items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor"
+                                            class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div class="col-8 text-nunito fs-15 fw-light text-muted">
-                                    SEO-оптимизация</div>
-                                <div class="col-2 d-flex justify-content-end align-items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor"
-                                        class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-                                    </svg>
-                                </div>
-                            </div>
+                            </a>
                             {{-- Контекст --}}
                             <div class="d-flex text-nunito col-10 ps-3 pb-4"
                                 style="color: #BCCEE4;">
@@ -334,6 +339,33 @@
                                     </svg>
                                 </div>
                             </div>
+                            {{-- Внутренняя реклама --}}
+                            <a class="text-decor-none" href="{{ route('bid_admin_list') }}">
+                                <div class="d-flex text-nunito col-10 ps-3 pb-4"
+                                    style="color: #BCCEE4;">
+                                    <div
+                                        class="col-2 d-flex justify-content-start align-items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor"
+                                            class="bi bi-briefcase" viewBox="0 0 16 16">
+                                            <path
+                                                d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z" />
+                                        </svg>
+                                    </div>
+                                    <div class="col-8 text-nunito fs-15 fw-light">
+                                        Внутренняя реклама
+                                    </div>
+                                    <div
+                                        class="col-2 d-flex justify-content-end align-items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor"
+                                            class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -348,9 +380,34 @@
                         aria-labelledby="flush-headingFive"
                         data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
+                            {{-- Заявки --}}
+                            <a class="text-decor-none" href="{{ route('bid_admin_list') }}">
+                                <div class="d-flex text-nunito col-10 ps-3 pt-4 pb-4"
+                                    style="color: #BCCEE4;">
+                                    <div
+                                        class="col-2 d-flex justify-content-start align-items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor"
+                                            class="bi bi-briefcase" viewBox="0 0 16 16">
+                                            <path
+                                                d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z" />
+                                        </svg>
+                                    </div>
+                                    <div class="col-8 text-nunito fs-15 fw-light">Заявки</div>
+                                    <div
+                                        class="col-2 d-flex justify-content-end align-items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor"
+                                            class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
                             {{-- Заказы --}}
                             <a class="text-decor-none" href="{{ route('orders_admin_list') }}">
-                                <div class="d-flex text-nunito col-10 ps-3 pt-4 pb-4"
+                                <div class="d-flex text-nunito col-10 ps-3 pb-4"
                                     style="color: #BCCEE4;">
                                     <div
                                         class="col-2 d-flex justify-content-start align-items-center">
@@ -401,6 +458,58 @@
                                         </svg>
                                     </div>
                                     <div class="col-8 text-nunito fs-15 fw-light">Пользователи
+                                    </div>
+                                    <div
+                                        class="col-2 d-flex justify-content-end align-items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor"
+                                            class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                            {{-- Контакты --}}
+                            <a class="text-decor-none" href="{{ route('ShowContacts') }}">
+                                <div class="d-flex text-nunito col-10 ps-3 pt-2 pb-4"
+                                    style="color: #BCCEE4;">
+                                    <div
+                                        class="col-2 d-flex justify-content-start align-items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor"
+                                            class="bi bi-envelope" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="col-8 text-nunito fs-15 fw-light">Контакты
+                                    </div>
+                                    <div
+                                        class="col-2 d-flex justify-content-end align-items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor"
+                                            class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                            {{-- Ссылки на соцсети --}}
+                            <a class="text-decor-none" href="{{ route('ShowSocseti') }}">
+                                <div class="d-flex text-nunito col-10 ps-3 pt-2 pb-4"
+                                    style="color: #BCCEE4;">
+                                    <div
+                                        class="col-2 d-flex justify-content-start align-items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor"
+                                            class="bi bi-envelope" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="col-8 text-nunito fs-15 fw-light">Ссылки на соцсети
                                     </div>
                                     <div
                                         class="col-2 d-flex justify-content-end align-items-center">

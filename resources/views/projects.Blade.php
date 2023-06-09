@@ -7,21 +7,23 @@
             <div class="mt-2 mb-5 title-over">Главная — Проекты
             </div>
             <div class="text-montserrat d-flex pb-2">
-                <button type="button" class="btn-custom">За все время</button>
-                <button type="button" class="btn-custom ms-1">2021</button>
-                <button type="button" class="btn-custom ms-1">2020</button>
-                <button type="button" class="btn-custom ms-1">2019</button>
-
+                <a href="{{route('projects')}}" class="btn-custom text-decoration-none">За все время</a>
+                @foreach ($years as $year)
+                    <a href="{{route('projects_filter',$date = $year->year)}}" class="btn-custom ms-1">{{ $year->year }}</a>
+                @endforeach
             </div>
             <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 pb-5">
                 @foreach ($projects as $project)
-                    <a href="{{ route('ShowProjectDetailPage',$id = $project->id)}}" class="col-lg-4 col-md-6 col-12 pt-4 text-decoration-none">
-                        <div class="px-2 bg-dark rounded-1 d-flex align-items-end"
-                            style="height: 320px; background: url(storage/{{$project->anounce_image}}) no-repeat; background-size: cover;">
-                            <div class="col-10 mx-auto py-5">
-                                <div class="card-title-over mb-2">
-                                    Системы вентиляции</div>
-                                <div class="card-title text-white">{{ $project->title }}</div>
+                    <a href="{{ route('ShowProjectDetailPage', $id = $project->id) }}"
+                        class="col-lg-4 col-md-6 col-12 pt-4 text-decoration-none">
+                        <div class="px-2 bg-dark border-custom rounded-1 d-flex align-items-end justify-content-start"
+                            style="height: 320px; background: url(/storage/{{ $project->anounce_image }}) no-repeat; background-size: cover;">
+                            <div class="ms-5 py-2 px-4 rounded-2 mb-5{{-- rounded-2 py-2 px-4 --}}"
+                                style="background: #ffffff;">
+                                <div class="card-title-over" style="background: #ffffff;">
+                                    {{ $project->sphere }}</div>
+                                <div class="card-title text-black" style="background: #ffffff;">
+                                    {{ $project->title }}</div>
                             </div>
                         </div>
                     </a>

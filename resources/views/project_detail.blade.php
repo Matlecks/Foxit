@@ -11,19 +11,34 @@
             </div>
         </div>
         <div class="mx-auto col-11 col-lg-10 pb-5">
-            <div class="d-flex border-custom col-12" style="height: 500px;">
-                <div class="col-lg-6 col-md-3 col-2" style="height: 100%;">
+            <div class="d-flex flex-wrap border-custom col-12" style="min-height: 500px;">
+                <div class="col-lg-6 col-12" style="height: 100%;">
                     <img src="/storage/{{ $project->details_image }}"
                         style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: 4px; border-bottom-left-radius: 4px;">
                 </div>
-                <div class="col-6 p-5">
-                    <div class="">
-                        <div class="title-over" style="color: #999999">{{ $project->created_at }}</div>
-                        <div class="text-montserrat fs-18" style="color: #333333">{{ $project->title }}
-                        </div>
-                    </div>
-                    <div class="d-flex mt-5">
-                        <div class="col-6">
+                <div class="col-lg-6 col-12 p-lg-5 p-md-5 p-4">
+                    <div class="d-flex flex-wrap mt-lg-5 mt-md-5 mt-0">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="">
+                                <div class="title-over" style="color: #999999">
+                                    {{ $project->created_at = date('d.F.y') }}</div>
+                                <div class="text-montserrat fs-18" style="color: #333333">
+                                    {{ $project->title }}
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <div class="title-over" style="color: #999999">Сайт</div>
+                                <a href="{{ $project->link }}" target="_blank"
+                                    class="text-montserrat fs-15 text-decoration-none"
+                                    style="color: #333333">{{ $project->link }}
+                                </a>
+                            </div>
+                            <div class="mt-4">
+                                <div class="title-over" style="color: #999999">Сфера</div>
+                                <div class="text-montserrat fs-15" style="color: #333333">
+                                    {{ $project->sphere }}
+                                </div>
+                            </div>
                             {{-- @if ($user != null)
                                 <div class="col-12">
                                     <div class="title-over">Автор</div>
@@ -32,51 +47,61 @@
                                 </div>
                             @endif --}}
                         </div>
-                        <div class="col-6">
+                        <div class="col-lg-6 col-md-6 col-12 mt-lg-0 mt-md-0 mt-5">
                             <button type="submit"
                                 class="col-12 rounded-1 fs-14 fw-bold text-montserrat px-3 py-3 text-white"
                                 style="border-style: solid; border-width: 1px; border-color: #365EDC; color: #365EDC; background: #365EDC;">Заказать
                                 проект</button>
                             <button type="submit"
                                 class="col-12 rounded-1 fs-14 fw-bold text-montserrat px-3 py-3 mt-3"
-                                style="border-style: solid; border-width: 1px; border-color: #365EDC; color: #365EDC; background: none;">Задать
+                                style="border-style: solid; border-width: 1px; border-color: #365EDC; color: #365EDC; background: none;"
+                                data-bs-toggle="modal" data-bs-target="#askquestion">Задать
                                 вопрос</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-9 mx-auto mt-5 text-montserrat fs-15 text-darkgrey"
+            <div class="col-lg-9 col-12 mx-auto mt-5 text-montserrat fs-15 text-darkgrey"
                 style="line-height: 25px;">
                 {!! $project->details_text !!}
             </div>
-            <div class="col-9 mx-auto mt-5">
+            <div class="col-lg-9 col-12 mx-auto mt-5">
                 @if (empty($users) == false)
                     <div class="mt-5">
                         <div class="text-roboto fs-22 fw-bold" style="color:#373737;">Сотрудники
                         </div>
                         @foreach ($users as $user)
                             <div class="border-custom p-4 mt-4">
-                                <div class="d-flex">
-                                    <div class="rounded-circle col-2"
+                                <div class="d-flex flex-wrap">
+                                    <div class="rounded-circle col-lg-2 col-2"
                                         style="width: 120px; height: 120px;">
                                         <img src="/storage/{{ $user->avatar }}" class="rounded-circle"
                                             style="width: 100%; height: 100%; object-fit: cover;">
                                     </div>
-                                    <div class="col-10 ps-4">
+                                    <div
+                                        class="col-col-10 col-md-9 col-12 ps-lg-4 ps-md-4 ps-0 mt-lg-0 mt-md-0 mt-4">
                                         <div class="fw-bold text-roboto fs-18">
-                                            {{ $user->name }}
-                                            {{ $user->surname }}</div>
-                                        <div class="d-flex mt-4">
+                                            <a href="{{ route('personal_detail', $id = $user->id) }}"
+                                                class="text-decoration-none text-black">{{ $user->name }}
+                                                {{ $user->surname }}</a>
+                                        </div>
+                                        <div class="d-flex flex-wrap mt-4">
+                                            {{-- <div class="col-12"> --}}
                                             <button type="submit"
-                                                class="rounded-1 fs-13 fw-bold text-montserrat py-2 px-3"
-                                                style="border-style: solid; border-width: 1px; border-color: #365EDC; color: #365EDC; background: none;">Написать
+                                                class="rounded-1 fs-13 fw-bold text-montserrat py-3 px-3"
+                                                style="border-style: solid; border-width: 1px; border-color: #365EDC; color: #365EDC; background: none;"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#writemessage">Написать
                                                 сообщение</button>
-                                            <div class="ms-5">
+                                            {{-- </div> --}}
+                                            <div
+                                                class="col-lg-3 col-md-3 col-12 ms-lg-5 ms-md-3 ms-0 mt-lg-0 mt-md-0 mt-3">
                                                 <div style="title-over">Телефон</div>
                                                 <a href="tel:{{ $user->phone }}"
                                                     class="text-decoration-none text-montserrat fs-15 text-darkgrey">{{ $user->phone }}</a>
                                             </div>
-                                            <div class="ms-5">
+                                            <div
+                                                class="col-lg-3 col-md-3 col-12 ms-lg-2 ms-md-2 ms-0 mt-lg-0 mt-md-0 mt-3">
                                                 <div style="title-over">E-mail</div>
                                                 <a href="tel:{{ $user->email }}"
                                                     class="text-decoration-none text-montserrat fs-15 text-darkgrey">{{ $user->email }}</a>

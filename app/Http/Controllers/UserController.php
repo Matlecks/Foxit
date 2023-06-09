@@ -10,14 +10,16 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Validator;
 use App\Models\Projects;
-
+use App\Models\BaseInfo;
 
 class UserController extends Controller
 {
     public function index()
     {
         $users = User::all();
-        return view('personal', compact('users'));
+        $contacts = BaseInfo::first();
+
+        return view('personal', compact('users','contacts'));
     }
 
     public function detail($id)
@@ -27,8 +29,9 @@ class UserController extends Controller
         $services = Services::where('id', '=', $user->services_id)->get();
         $projects = $user->projects;
         $reviews = Review::where('id', '=', $user->reviews_id)->get();
+        $contacts = BaseInfo::first();
 
-        return view('person_detail', compact('services', 'user', 'reviews', 'projects'));
+        return view('person_detail', compact('services', 'user', 'reviews', 'projects','contacts'));
     }
 
     public function UserAdd(Request $request)

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BaseInfo;
 use App\Models\Posts;
 use App\Models\Review;
 use App\Models\User;
@@ -12,18 +13,30 @@ class PostsController extends Controller
 {
     public function index()
     {
+        $years = Posts::selectRaw('YEAR(created_at) as year')->distinct()->orderBy('year', 'desc')->get();
+        $contacts = BaseInfo::first();
         $posts = Posts::all();
 
-        return view('news', compact('posts'));
+        return view('posts', compact('posts','years','contacts'));
+    }
+
+    public function index_filter($year)
+    {
+        $years = Posts::selectRaw('YEAR(created_at) as year')->distinct()->orderBy('year', 'desc')->get();
+        $contacts = BaseInfo::first();
+        $posts = Posts::whereYear('created_at', $year)->get();
+
+        return view('posts', compact('posts','years','contacts'));
     }
 
     public function detail($id)
     {
         $post = Posts::find($id);
         $user = User::find($post->users_id);
+        $contacts = BaseInfo::first();
         //$reviews = Review::where('id','=',$post->reviews_id)->get();
 
-        return view('new_detail', compact('post', 'user'));
+        return view('post_detail', compact('post', 'user','contacts'));
     }
 
     public function ShowTable()

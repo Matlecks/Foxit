@@ -38,8 +38,7 @@
                             </div>
                         </div>
                         <div class="col-3 ms-4 text-dark">
-                            <div class="fw-bold fs-17 text-roboto ">г. Уфа, ул.Энтузиастов,
-                                30</div>
+                            <div class="fw-bold fs-17 text-roboto ">{{ $contacts->address }}</div>
                             <div class="fw-light fs-14 mt-1">
                                 <svg viewBox="0 0 24 24" fill="none" width="20" height="20"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +55,7 @@
                                             stroke-linejoin="round"></path>
                                     </g>
                                 </svg>
-                                <span>Пн - Пт: 9.00 - 18.00</span>
+                                <span>{{ $contacts->time }}</span>
                             </div>
                             <div class="fw-light fs-14 mt-1">Сб - Вс: выходные</div>
                             <div class="fw-bold fs-16">
@@ -71,10 +70,9 @@
                             </div>
                         </div>
                         <div class="col-3 ms-5 text-montserrat fw-light fs-15 text-dark">
-                            <div class=""><a href="tel:+79279358355">+7 (927) 935-83-55</a></div>
-                            {{-- <div class="">+7 (000) 000-00-01</div> --}}
+                            <div class=""><a href="tel:{{ $contacts->phone }}">{{ $contacts->phone }}</a></div>
                             <div class="mt-2"><a
-                                    href="mailto:damir-khaybulin@mail.ru">damir-khaybulin@mail.ru</a>
+                                    href="mailto:{{ $contacts->email }}">{{ $contacts->email }}</a>
                             </div>
                         </div>
                         <div class="col-2 text-primary text-center">На карте</div>
@@ -99,28 +97,33 @@
                             <div
                                 class="text-white text-montserrat fw-light col-9 ps-4 py-4 d-md-none d-lg-block">
                                 <div class="fs-13">Центральный офис</div>
-                                <div class="fs-18">Сочи, ул. Навагинская 13/1, микрорайон Центральный</div>
+                                <div class="fs-18">{{ $contacts->address }}
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-10 col-md-5 mx-auto py-lg-3 py-md-0">
                             <div class="text-dark col-12 pb-3 d-lg-none d-md-block">
                                 <div class="card-date">Центральный офис</div>
-                                <div class="card-title fs-18">Сочи, ул. Навагинская 13/1, микрорайон Центральный
+                                <div class="card-title fs-18">{{ $contacts->address }}
                                 </div>
                             </div>
                             <div class="card-date mt-lg-3 mt-md-0" style="color: #999999">Режим работы
                             </div>
-                            <div class="card-title-preview mt-1">Пн. – Пт.: с 9:00 до 18:00</div>
+                            <div class="card-title-preview mt-1">{{ $contacts->time }}</div>
                             <div class="card-date mt-3" style="color: #999999">Телефон
                             </div>
-                            <div class="card-title-preview mt-1"><a href="tel:+79279358355" class="card-title-preview text-decoration-none text-dark">+7 (927) 935-83-55</a></div>
+                            <div class="card-title-preview mt-1"><a href="tel:{{ $contacts->phone }}"
+                                    class="card-title-preview text-decoration-none text-dark">{{ $contacts->phone }}</a></div>
                             {{-- <div class="card-title-preview mt-1">+7 000 000-00-11</div> --}}
                             <div class="card-date mt-3" style="color: #999999">E-mail
                             </div>
                             <div class="card-title-preview mt-1"><a
-                                href="mailto:damir-khaybulin@mail.ru" class="card-title-preview text-decoration-none text-dark">damir-khaybulin@mail.ru</a></div>
+                                    href="mailto:{{ $contacts->email }}"
+                                    class="card-title-preview text-decoration-none text-dark">{{ $contacts->email }}</a>
+                            </div>
                             <a href="#"
-                                class="btn btn-outline-primary mt-4 mb-3 col-12 fw-bolder text-montserrat fs-14">Написать
+                                class="btn btn-outline-primary mt-4 mb-3 col-12 fw-bolder text-montserrat fs-14"
+                                data-bs-toggle="modal" data-bs-target="#writemessage">Написать
                                 сообщение</a>
                         </div>
                     </div>

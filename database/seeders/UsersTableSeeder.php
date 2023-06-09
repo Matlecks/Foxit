@@ -20,9 +20,15 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Дамир',
             'surname' => 'Хайбулин',
-            'email' => 'admin@mail.ru',
-            'login' => 'admin@mail.ru',
+            'email' => 'damir-khaybulin@mail.ru',
+            'phone' => '+7 (927) 935-83-55',
+            'login' => 'damir-khaybulin@mail.ru',
+            'anounce_image' => 'folder/Person.png',
+            'details_image' => 'folder/Person.png',
+            'avatar' => 'folder/logo.png',
+            'logo' => 'folder/logo.png',
             'role' => 'Admin',
+            'job' => 'Веб-разработчик',
             'password' => Hash::make('admin@mail.ru'),
         ]);
     }

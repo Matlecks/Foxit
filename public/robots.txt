@@ -1,2 +1,26 @@
 User-agent: *
 Disallow:
+Disallow: /vendor/
+Disallow: /storage/
+Disallow: /bootstrap/
+Disallow: /config/
+Disallow: /database/
+Disallow: /resources/
+Disallow: /routes/
+Disallow: /tests/
+Disallow: /node_modules/
+Disallow: /webpack.mix.js
+Disallow: /package.json
+Disallow: /yarn.lock
+Disallow: /README.md
+Disallow: /composer.json
+Disallow: /composer.lock
+Disallow: /phpunit.xml
+Disallow: /phpunit.xml.dist
+Disallow: /server.php
+Disallow: /artisan
+Disallow: /*.md$
+Disallow: /*.lock$
+Disallow: /*.json$
+Disallow: /*.xml$
+Sitemap: https://asd.ru/sitemap.xml

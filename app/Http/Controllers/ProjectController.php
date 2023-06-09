@@ -2,26 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BaseInfo;
 use App\Models\Projects;
 use App\Models\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
     public function index()
     {
+        $years = Projects::selectRaw('YEAR(created_at) as year')->distinct()->orderBy('year', 'desc')->get();
+        $contacts = BaseInfo::first();
         $projects = Projects::all();
 
-        return view('projects', compact('projects'));
+        return view('projects', compact('projects','years','contacts'));
+    }
+
+    public function index_filter($year)
+    {
+        $years = Projects::selectRaw('YEAR(created_at) as year')->distinct()->orderBy('year', 'desc')->get();
+        $contacts = BaseInfo::first();
+        $projects = Projects::whereYear('created_at', $year)->get();
+
+        return view('projects', compact('projects','years','contacts'));
     }
 
     public function detail($id)
     {
         $project = Projects::find($id);
-
+        $contacts = BaseInfo::first();
         $users = $project->users;
         //$user = User::where('id','=',$project->users()->pivot->user_id)->projects()->get();
         //dd($project);
@@ -29,7 +40,7 @@ class ProjectController extends Controller
         $user->users()->pivot->projects_id); */
         $reviews = Review::where('id', '=', $project->reviews_id)->get();
 
-        return view('project_detail', compact('project', 'users', 'reviews'));
+        return view('project_detail', compact('project', 'users', 'reviews','contacts'));
     }
 
     public function ShowTable()
@@ -60,6 +71,8 @@ class ProjectController extends Controller
         } else {
             $project->details_image = $request->details_image->storeAs('folder', $request->details_image->getClientOriginalName(), 'public');
         }
+        $project->sphere = ($request->sphere);
+        $project->link = ($request->link);
         $project->SEOTitle = ($request->SEOTitle);
         $project->SEOKeys = ($request->SEOKeys);
         $project->SEODescription = ($request->SEODescription);
@@ -101,6 +114,8 @@ class ProjectController extends Controller
         } else {
             $project->details_image = $request->details_image->storeAs('folder', $request->details_image->getClientOriginalName(), 'public');
         }
+        $project->sphere = ($request->sphere);
+        $project->link = ($request->link);
         $project->SEOKeys = ($request->SEOKeys);
         $project->SEODescription = ($request->SEODescription);
         $project->ALTAnounceImg = ($request->ALTAnounceImg);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BaseInfo;
 use Illuminate\Http\Request;
 use App\Models\Services;
 use App\Models\Services_tree;
@@ -14,7 +15,8 @@ class ServicesController extends Controller
     {
         $services = Services::all();
         //$posts = Post::where('User_id', Auth::User()->id)->paginate(4);
-        return view('services', compact('services'));
+        $contacts = BaseInfo::first();
+        return view('services', compact('services','contacts'));
     }
     public function ShowTable()
     {
@@ -26,9 +28,10 @@ class ServicesController extends Controller
     {
         $service = Services::find($id);
         $user = User::find($service->users_id);
-        $reviews = Review::where('id','=',$service->reviews_id)->get();
+        $reviews = Review::where('id', '=', $service->reviews_id)->get();
+        $contacts = BaseInfo::first();
 
-        return view('service_detail', compact('service', 'user','reviews'));
+        return view('service_detail', compact('service', 'user', 'reviews','contacts'));
     }
 
     public function AddPageService()
@@ -38,7 +41,7 @@ class ServicesController extends Controller
         $users = User::all();
         $reviews = Review::all();
 
-        return view('AddPage', compact('title', 'sections', 'users','reviews'));
+        return view('AddPage', compact('title', 'sections', 'users', 'reviews'));
     }
 
     public function AddService(Request $request)
@@ -47,6 +50,7 @@ class ServicesController extends Controller
 
         $service->title = ($request->title);
         $service->section_id = ($request->section);
+        $service->category = ($request->category);
         $service->cost = ($request->cost);
         $service->anounce_text = ($request->anounce_text);
         if ($request->anounce_image == null) {
@@ -87,7 +91,7 @@ class ServicesController extends Controller
         $reviews = Review::all();
         $title = "Услуга";
 
-        return view('EditPage', compact('element', 'title', 'sections', 'parent_id', 'parent_section', 'id','users','reviews'));
+        return view('EditPage', compact('element', 'title', 'sections', 'parent_id', 'parent_section', 'id', 'users', 'reviews'));
     }
 
     public function UpdateService(Request $request, $id)
@@ -97,6 +101,7 @@ class ServicesController extends Controller
         $service->title = ($request->title);
         $service->section_id = ($request->section);
         $service->cost = ($request->cost);
+        $service->category = ($request->category);
         $service->anounce_text = ($request->anounce_text);
         if ($request->anounce_image == null) {
         } else {

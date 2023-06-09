@@ -40,11 +40,40 @@
                         </div>
                     @endforeach
                 </div>
-                {{-- @if ($services != null)
-                    @foreach ($services as $service)
-                        {{ $service->title }}
-                    @endforeach
-                @endif --}}
+                @if ($services != null)
+                        @foreach ($services as $service)
+                            <div
+                                class="border-custom text-decoration-none col-12 d-flex flex-wrap p-4 justify-content-between mt-4">
+                                <div class="col-lg-4 col-md-4 col-12 services-element-img-container">
+                                    <img src="/storage/{{ $service->anounce_image }}" class=""
+                                        style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div
+                                    class="col-lg-7 col-md-5 col-12 mt-lg-0 mt-md-0 mt-5 text px-lg-3 px-md-3">
+                                    <div class="title-over mb-1">
+                                        {{ Services_tree::find($service->section_id)->title }}</div>
+                                    <a href="{{ route('ShowDetailPage', $id = $service->id) }}"
+                                        class="card-title text-decoration-none"
+                                        style="color:#000000; font-size: 18px;">
+                                        {{ $service->title }}
+                                    </a>
+                                    <div class="title-preview mt-3"
+                                        style="font-size: 13px; line-height: 20px">
+                                        {{ $service->anounce_text }}
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-12 mt-lg-0 mt-md-0 mt-4">
+                                    <div class="fw-bold fs-17 text-montserrat">от {{ $service->cost }}
+                                        рублей
+                                    </div>
+                                    <button type="submit"
+                                        class="btn btn-primary text-montserrat fs-14 fw-bold col-12 px-5 py-2 mt-lg-4 mt-md-4 mt-2"
+                                        style="background: #365EDC; border-color: #365EDC;">Оформить</button>
+
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
             @elseif(isset($subsections))
                 <div class="{{-- d-flex justify-content-between --}} {{-- row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 --}}"
                     style="display: grid; grid-gap: 20px; grid-template-columns: repeat(auto-fill,minmax(310px,1fr));">

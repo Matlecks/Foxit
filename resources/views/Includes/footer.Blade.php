@@ -6,56 +6,53 @@
             {{-- Колонки --}}
             <div class="row row-cols-3 col-lg-9 col-md-9 col-6 navbar-expand-md">
                 <div class="col-lg-4 col-md-4 col-6 mb-3">
-                    <h5 class="fw-bold text-white" style="font-size: 15px;">Компания</h5>
-                    <ul class="nav flex-column fw-light text-muted mt-4"
-                        style="font-size: 13px;">
-                        <li class="nav-item mb-2"><a href="#"
-                                class="nav-link p-0 text-muted">О компании</a></li>
-                        <li class="nav-item mb-2"><a href="#"
-                                class="nav-link p-0 text-muted">Услуги</a></li>
-                        <li class="nav-item mb-2"><a href="#"
-                                class="nav-link p-0 text-muted">Работы</a></li>
-                        <li class="nav-item mb-2"><a href="#"
-                                class="nav-link p-0 text-muted">Новости</a></li>
-                        <li class="nav-item mb-2"><a href="#"
-                                class="nav-link p-0 text-muted">Контакты</a></li>
+                    <h5 class="fw-bold text-white fs-18">Компания</h5>
+                    <ul class="nav fs-15 flex-column fw-light text-white mt-4">
+                        <li class="nav-item mb-2 "><a href="#"
+                                class="nav-link p-0 text-999 text-montserrat">О компании</a></li>
+                        <li class="nav-item mb-2 "><a href="#"
+                                class="nav-link p-0 text-999 text-montserrat">Услуги</a></li>
+                        <li class="nav-item mb-2 "><a href="#"
+                                class="nav-link p-0 text-999 text-montserrat">Работы</a></li>
+                        <li class="nav-item mb-2 "><a href="#"
+                                class="nav-link p-0 text-999 text-montserrat">Новости</a></li>
+                        <li class="nav-item mb-2 "><a href="#"
+                                class="nav-link p-0 text-999 text-montserrat">Контакты</a></li>
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse col-8">
                     <div class="col-lg-6 col-md-6 col-4 mb-3">
-                        <h5 class="fw-bold text-white" style="font-size: 15px;">Работы
+                        <h5 class="fw-bold text-white fs-18">Работы
                         </h5>
-                        <ul class="nav flex-column fw-light text-muted mt-4"
-                            style="font-size: 13px;">
+                        <ul class="nav fs-15 flex-column fw-light text-muted mt-4">
                             <li class="nav-item mb-2"><a href="#"
-                                    class="nav-link p-0 text-muted">Строительство</a></li>
+                                    class="nav-link p-0 text-999 text-montserrat">Строительство</a></li>
                             <li class="nav-item mb-2"><a href="#"
-                                    class="nav-link p-0 text-muted">Юриспруденция</a></li>
+                                    class="nav-link p-0 text-999 text-montserrat">Юриспруденция</a></li>
                             <li class="nav-item mb-2"><a href="#"
-                                    class="nav-link p-0 text-muted">Beauty</a></li>
+                                    class="nav-link p-0 text-999 text-montserrat">Beauty</a></li>
                             <li class="nav-item mb-2"><a href="#"
-                                    class="nav-link p-0 text-muted">Розница</a></li>
+                                    class="nav-link p-0 text-999 text-montserrat">Розница</a></li>
                             <li class="nav-item mb-2"><a href="#"
-                                    class="nav-link p-0 text-muted">Авто</a></li>
+                                    class="nav-link p-0 text-999 text-montserrat">Авто</a></li>
                         </ul>
                     </div>
 
                     <div class="col-lg-6 col-md-6 col-4 mb-3">
-                        <h5 class="fw-bold text-white" style="font-size: 15px;">Услуги
+                        <h5 class="fw-bold text-white fs-18">Услуги
                         </h5>
-                        <ul class="nav flex-column fw-light text-muted mt-4"
-                            style="font-size: 13px;">
+                        <ul class="nav flex-column fw-light text-muted mt-4 fs-15">
                             <li class="nav-item mb-2"><a href="#"
-                                    class="nav-link p-0 text-muted">Корпоративные</a></li>
+                                    class="nav-link p-0 text-999 text-montserrat">Корпоративные</a></li>
                             <li class="nav-item mb-2"><a href="#"
-                                    class="nav-link p-0 text-muted">Интернет-магазины</a>
+                                    class="nav-link p-0 text-999 text-montserrat">Интернет-магазины</a>
                             </li>
                             <li class="nav-item mb-2"><a href="#"
-                                    class="nav-link p-0 text-muted">Сервисы</a></li>
+                                    class="nav-link p-0 text-999 text-montserrat">Сервисы</a></li>
                             <li class="nav-item mb-2"><a href="#"
-                                    class="nav-link p-0 text-muted">Персональные</a></li>
+                                    class="nav-link p-0 text-999 text-montserrat">Персональные</a></li>
                             <li class="nav-item mb-2"><a href="#"
-                                    class="nav-link p-0 text-muted">Лендинги</a></li>
+                                    class="nav-link p-0 text-999 text-montserrat">Лендинги</a></li>
                         </ul>
                     </div>
                 </div>
@@ -65,99 +62,63 @@
                 <div
                     class="d-flex justify-content-md-between justify-content-lg-start col-12">
                     <div class="col-lg-1 col-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20"
-                            height="20" fill="grey" class="bi bi-telephone"
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25"
+                            height="25" fill="grey" class="bi bi-telephone"
                             viewBox="0 0 16 16">
                             <path
                                 d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
                         </svg>
                     </div>
-                    <div class="col-lg-6 col-10"><a href="tel:+7(927)935-83-55"
-                            style="text-decoration: none; color: #ffffff">+7 (927)
-                            935-83-55</a></div>
+                    <div class="col-lg-6 col-10"><a href="tel:{{ $contacts->phone }}" class="text-white fs-17"
+                            style="text-decoration: none;">{{ $contacts->phone }}</a></div>
                 </div>
                 <div
                     class="d-flex justify-content-md-between justify-content-lg-start col-12 mt-4">
                     <div class="col-lg-1 col-2 d-flex align-items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20"
-                            height="20" fill="grey" class="bi bi-envelope"
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25"
+                            height="25" fill="grey" class="bi bi-envelope"
                             viewBox="0 0 16 16">
                             <path
                                 d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
                         </svg>
                     </div>
-                    <div class="col-lg-6 col-10"><a href="mailto:damir-khaybulin@mail.ru"
-                            class="fw-light"
-                            style="text-decoration: none; color: #ffffff">damir-khaybulin@mail.ru</a>
+                    <div class="col-lg-6 col-10"><a href="mailto:{{ $contacts->email }}"
+                            class="text-white fs-17 ms-lg-2 ms-md-2 ms-0"
+                            style="text-decoration: none;">{{ $contacts->email }}</a>
                     </div>
                 </div>
                 <div class="d-flex justify-content-start col-lg-6 col-12 mt-4">
-                    <svg class="rounded-2 p-1" fill="#808080" height="35"
-                        width="35" version="1.1" id="Capa_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        style="border-width: 3px; border-style: solid; border-color: #808080;"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        viewBox="0 0 363.301 363.301" xml:space="preserve"
-                        stroke="#808080">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                            stroke-linejoin="round">
-                        </g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path
-                                d="M347.506,240.442c-7.91-9.495-16.899-18.005-25.592-26.235c-3.091-2.927-6.287-5.953-9.368-8.962 c-8.845-8.648-9.167-11.897-2.164-21.72c4.845-6.771,9.982-13.551,14.95-20.108c4.506-5.949,9.166-12.101,13.632-18.273l0.917-1.269 c8.536-11.811,17.364-24.024,22.062-38.757c1.22-3.887,2.501-9.607-0.428-14.39c-2.927-4.779-8.605-6.237-12.622-6.918 c-1.987-0.337-3.96-0.383-5.791-0.383l-55.901-0.04l-0.462-0.004c-8.452,0-14.148,3.983-17.412,12.178 c-3.116,7.83-6.539,16.168-10.445,24.096c-7.773,15.787-17.645,33.97-31.93,49.135l-0.604,0.645 c-1.687,1.813-3.598,3.866-4.995,3.866c-0.214,0-0.447-0.041-0.711-0.124c-2.959-1.153-4.945-8.316-4.855-11.648 c0.001-0.046,0.002-0.092,0.002-0.138l-0.039-64.61c0-0.224-0.016-0.446-0.045-0.668c-1.422-10.503-4.572-17.041-16.474-19.372 c-0.316-0.063-0.639-0.094-0.961-0.094h-58.126c-9.47,0-14.688,3.849-19.593,9.61c-1.324,1.54-4.08,4.746-2.714,8.635 c1.386,3.947,5.885,4.791,7.35,5.065c7.272,1.384,11.371,5.832,12.532,13.604c2.027,13.496,2.276,27.901,0.784,45.334 c-0.416,4.845-1.239,8.587-2.595,11.784c-0.315,0.746-1.432,3.181-2.571,3.182c-0.362,0-1.409-0.142-3.316-1.456 c-4.509-3.089-7.808-7.497-11.654-12.942c-13.084-18.491-24.065-38.861-33.575-62.288c-3.527-8.624-10.114-13.452-18.556-13.594 c-9.276-0.141-17.686-0.209-25.707-0.209c-8.764,0-16.889,0.081-24.823,0.246C8.914,83.74,4.216,85.776,1.744,89.676 c-2.476,3.903-2.315,9.03,0.479,15.236c22.366,49.723,42.645,85.876,65.755,117.228c16.193,21.938,32.435,37.123,51.109,47.784 c19.674,11.255,41.722,16.727,67.402,16.727c2.911,0,5.921-0.071,8.956-0.213c14.922-0.727,20.458-6.128,21.158-20.657 c0.333-7.425,1.145-15.212,4.795-21.853c2.304-4.184,4.452-4.184,5.158-4.184c1.36,0,3.046,0.626,4.857,1.799 c3.248,2.12,6.033,4.96,8.316,7.441c2.149,2.357,4.274,4.738,6.401,7.12c4.59,5.141,9.336,10.456,14.294,15.497 c10.852,11.041,22.807,15.897,36.538,14.843h51.252c0.109,0,0.219-0.004,0.328-0.011c5.107-0.337,9.53-3.17,12.135-7.772 c3.227-5.701,3.162-12.974-0.174-19.46C356.718,251.867,351.808,245.601,347.506,240.442z">
-                            </path>
-                        </g>
-                    </svg>
-                    <svg fill="#808080" version="1.1" id="Layer_1"
-                        class="rounded-1 mx-2" height="35" width="35"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        viewBox="-16.91 -16.91 202.88 202.88" xml:space="preserve"
-                        stroke="#000000" transform="matrix(1, 0, 0, 1, 0, 0)"
-                        stroke-width="0.0016906299999999998"
-                        style="border-width: 3px; border-style: solid; border-color: #808080;">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                            stroke-linejoin="round" stroke="#CCCCCC"
-                            stroke-width="2.705008">
-                        </g>
-                        <g id="SVGRepo_iconCarrier">
-                            <g>
-                                <path
-                                    d="M84.531,40.97c-24.021,0-43.563,19.542-43.563,43.563c0,24.02,19.542,43.561,43.563,43.561s43.563-19.541,43.563-43.561 C128.094,60.512,108.552,40.97,84.531,40.97z M84.531,113.093c-15.749,0-28.563-12.812-28.563-28.561 c0-15.75,12.813-28.563,28.563-28.563s28.563,12.813,28.563,28.563C113.094,100.281,100.28,113.093,84.531,113.093z">
-                                </path>
-                                <path
-                                    d="M129.921,28.251c-2.89,0-5.729,1.17-7.77,3.22c-2.051,2.04-3.23,4.88-3.23,7.78c0,2.891,1.18,5.73,3.23,7.78 c2.04,2.04,4.88,3.22,7.77,3.22c2.9,0,5.73-1.18,7.78-3.22c2.05-2.05,3.22-4.89,3.22-7.78c0-2.9-1.17-5.74-3.22-7.78 C135.661,29.421,132.821,28.251,129.921,28.251z">
-                                </path>
-                            </g>
-                        </g>
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
-                        width="35" height="35" fill="#808080" class="rounded-2"
-                        style="border-width: 3px; border-style: solid; border-color: #808080;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" width="25"
+                        height="25" fill="#999999" class="mx-lg-3 mx-0">
                         <path
-                            d="M 26.070313 3.996094 C 25.734375 4.011719 25.417969 4.109375 25.136719 4.21875 L 25.132813 4.21875 C 24.847656 4.332031 23.492188 4.902344 21.433594 5.765625 C 19.375 6.632813 16.703125 7.757813 14.050781 8.875 C 8.753906 11.105469 3.546875 13.300781 3.546875 13.300781 L 3.609375 13.277344 C 3.609375 13.277344 3.25 13.394531 2.875 13.652344 C 2.683594 13.777344 2.472656 13.949219 2.289063 14.21875 C 2.105469 14.488281 1.957031 14.902344 2.011719 15.328125 C 2.101563 16.050781 2.570313 16.484375 2.90625 16.722656 C 3.246094 16.964844 3.570313 17.078125 3.570313 17.078125 L 3.578125 17.078125 L 8.460938 18.722656 C 8.679688 19.425781 9.949219 23.597656 10.253906 24.558594 C 10.433594 25.132813 10.609375 25.492188 10.828125 25.765625 C 10.933594 25.90625 11.058594 26.023438 11.207031 26.117188 C 11.265625 26.152344 11.328125 26.179688 11.390625 26.203125 C 11.410156 26.214844 11.429688 26.21875 11.453125 26.222656 L 11.402344 26.210938 C 11.417969 26.214844 11.429688 26.226563 11.441406 26.230469 C 11.480469 26.242188 11.507813 26.246094 11.558594 26.253906 C 12.332031 26.488281 12.953125 26.007813 12.953125 26.007813 L 12.988281 25.980469 L 15.871094 23.355469 L 20.703125 27.0625 L 20.8125 27.109375 C 21.820313 27.550781 22.839844 27.304688 23.378906 26.871094 C 23.921875 26.433594 24.132813 25.875 24.132813 25.875 L 24.167969 25.785156 L 27.902344 6.65625 C 28.007813 6.183594 28.035156 5.742188 27.917969 5.3125 C 27.800781 4.882813 27.5 4.480469 27.136719 4.265625 C 26.769531 4.046875 26.40625 3.980469 26.070313 3.996094 Z M 25.96875 6.046875 C 25.964844 6.109375 25.976563 6.101563 25.949219 6.222656 L 25.949219 6.234375 L 22.25 25.164063 C 22.234375 25.191406 22.207031 25.25 22.132813 25.308594 C 22.054688 25.371094 21.992188 25.410156 21.667969 25.28125 L 15.757813 20.75 L 12.1875 24.003906 L 12.9375 19.214844 C 12.9375 19.214844 22.195313 10.585938 22.59375 10.214844 C 22.992188 9.84375 22.859375 9.765625 22.859375 9.765625 C 22.886719 9.3125 22.257813 9.632813 22.257813 9.632813 L 10.082031 17.175781 L 10.078125 17.15625 L 4.242188 15.191406 L 4.242188 15.1875 C 4.238281 15.1875 4.230469 15.183594 4.226563 15.183594 C 4.230469 15.183594 4.257813 15.171875 4.257813 15.171875 L 4.289063 15.15625 L 4.320313 15.144531 C 4.320313 15.144531 9.53125 12.949219 14.828125 10.71875 C 17.480469 9.601563 20.152344 8.476563 22.207031 7.609375 C 24.261719 6.746094 25.78125 6.113281 25.867188 6.078125 C 25.949219 6.046875 25.910156 6.046875 25.96875 6.046875 Z" />
+                            d="M 7.546875 0 C 3.390625 0 0 3.390625 0 7.546875 L 0 18.453125 C 0 22.609375 3.390625 26 7.546875 26 L 18.453125 26 C 22.609375 26 26 22.609375 26 18.453125 L 26 7.546875 C 26 3.390625 22.609375 0 18.453125 0 Z M 7.546875 2 L 18.453125 2 C 21.527344 2 24 4.46875 24 7.546875 L 24 18.453125 C 24 21.527344 21.53125 24 18.453125 24 L 7.546875 24 C 4.472656 24 2 21.53125 2 18.453125 L 2 7.546875 C 2 4.472656 4.46875 2 7.546875 2 Z M 20.5 4 C 19.671875 4 19 4.671875 19 5.5 C 19 6.328125 19.671875 7 20.5 7 C 21.328125 7 22 6.328125 22 5.5 C 22 4.671875 21.328125 4 20.5 4 Z M 13 6 C 9.144531 6 6 9.144531 6 13 C 6 16.855469 9.144531 20 13 20 C 16.855469 20 20 16.855469 20 13 C 20 9.144531 16.855469 6 13 6 Z M 13 8 C 15.773438 8 18 10.226563 18 13 C 18 15.773438 15.773438 18 13 18 C 10.226563 18 8 15.773438 8 13 C 8 10.226563 10.226563 8 13 8 Z" />
                     </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                        fill="#999999" class="bi bi-whatsapp mx-lg-3 mx-0 ms-4"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                    </svg>
+                    <img class="mx-lg-3 mx-0 ms-4" src="/img/vk.png" height="30">
                 </div>
             </div>
         </div>
         {{-- Разделитель (полоска вместо <hr>) --}}
         <div class="" style="height: 1.5px; background: #484848;"></div>
         <div
-            class="d-flex row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 text-start py-4 my-4">
+            class="d-flex row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 text-start py-4">
             <div
-                class="col-lg-3 col-md-6 col-sm-12 my-2 my-md-2 my-lg-0 fw-light text-muted">
+                class="col-lg-3 col-md-6 col-sm-12 my-2 my-md-2 my-lg-0 fw-light fs-17 text-999">
                 2023 © FoxIT Все права защищены
             </div>
             <div
-                class="col-lg-3 col-md-6 col-sm-12 my-2 my-md-2 my-lg-0 fw-light text-muted">
+                class="col-lg-3 col-md-6 col-sm-12 my-2 my-md-2 my-lg-0 fw-light fs-17 text-999">
                 Политика конфиденциальности</div>
             <div
-                class="col-lg-3 col-md-6 col-sm-12 my-2 my-md-2 my-lg-0 fw-light text-muted">
+                class="col-lg-3 col-md-6 col-sm-12 my-2 my-md-2 my-lg-0 fw-light fs-17 text-999">
                 Способы оплаты</div>
             <div
-                class="col-lg-3 col-md-6 col-sm-12 my-2 my-md-2 my-lg-0 fw-light text-muted d-flex">
+                class="col-lg-3 col-md-6 col-sm-12 my-2 my-md-2 my-lg-0 fw-light fs-17 text-999 d-flex">
                 Разработано в <span class="fw-bold">
                     &nbsp;FoxIT
                 </span>

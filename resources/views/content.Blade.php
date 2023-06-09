@@ -1,10 +1,14 @@
 @extends('index')
 
+@php
+    use App\Models\Services_tree;
+@endphp
+
 @section('content')
     <div class="" style="background: #F8F8F8; z-index: 9;">
         {{-- Баннер --}}
         <div class="navbar-expand-md"
-            style="background: #FBFBF3 url(https://allcorp3-demo.ru/upload/iblock/20b/20bb5bf8d068f3bf4444b375e9b94a1b.jpg) no-repeat; min-height: 280px;">
+            style="background: #FBFBF3 url(https://allcorp3-demo.ru/upload/iblock/20b/20bb5bf8d068f3bf4444b375e9b94a1b.jpg) no-repeat; background-size: cover; min-height: 280px;">
 
             {{-- Баннер --}}
             <div class="mx-auto col-lg-10 col-12 justify-content-between collapse navbar-collapse"
@@ -31,16 +35,18 @@
                         </div>
                     </div>
                     <div class="col-6 d-flex justify-content-start mt-5" style="">
-                        <button type="button" class="btn btn-primary fw-bold "
-                            style="background: #365EDC; font-size: 16px; font-weight: 700; padding: 17px 26px 17px 26px">Подробнее</button>
-                        <button type="button" class="btn btn-light fw-bold text-blue ms-3"
+                        <a href="{{ route('about') }}" type="button" class="btn btn-primary fw-bold "
+                            style="background: #365EDC; font-size: 16px; font-weight: 700; padding: 17px 26px 17px 26px">Подробнее</a>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#askquestion"
+                            class="btn btn-light fw-bold text-blue ms-3"
                             style="color: #365EDC; background: #ffffff; font-size: 16px; font-weight: 700; padding: 17px 26px 17px 26px">Задать
                             вопрос</button>
                     </div>
                 </div>
                 {{-- Активная картинка --}}
                 <div class="active-img">
-                    <img src="https://allcorp3-demo.ru/upload/iblock/bbe/bbefcd51d981f4c65c9c821d2f5397b2.png" class="img ">
+                    <img src="https://allcorp3-demo.ru/upload/iblock/bbe/bbefcd51d981f4c65c9c821d2f5397b2.png"
+                        class="img ">
                 </div>
             </div>
         </div>
@@ -48,7 +54,8 @@
         <div style="background: #ffffff">
             <div class="mx-auto col-lg-10 col-11 row align-items-center py-5">
                 {{-- Тизер 1 --}}
-                <div class="d-flex col-12 col-md-6 col-lg-3 my-3 justify-content-lg-center justify-content-md-start px-0">
+                <div
+                    class="d-flex col-12 col-md-6 col-lg-3 my-3 justify-content-lg-center justify-content-md-start px-0">
                     <div class="d-flex align-items-center justify-content-lg-center justify-content-md-start col-lg-3 col-md-3 col-2"
                         style="height: 72px;">
                         <img src="img/Client.png" height="50" width="50">
@@ -61,7 +68,8 @@
                     </div>
                 </div>
                 {{-- Тизер 2 --}}
-                <div class="d-flex col-12 col-md-6 col-lg-3 my-3 justify-content-lg-center justify-content-md-start px-0" style="">
+                <div class="d-flex col-12 col-md-6 col-lg-3 my-3 justify-content-lg-center justify-content-md-start px-0"
+                    style="">
                     <div class="d-flex align-items-center justify-content-lg-center justify-content-md-start col-lg-3 col-md-3 col-2"
                         style="height: 72px;">
                         <img src="img/Cost.png" height="50" width="50">
@@ -73,7 +81,8 @@
                     </div>
                 </div>
                 {{-- Тизер 3 --}}
-                <div class="d-flex col-12 col-md-6 col-lg-3 my-3 justify-content-lg-center justify-content-md-start px-0" style="">
+                <div class="d-flex col-12 col-md-6 col-lg-3 my-3 justify-content-lg-center justify-content-md-start px-0"
+                    style="">
                     <div class="d-flex align-items-center justify-content-lg-center justify-content-md-start col-lg-3 col-md-3 col-2"
                         style="height: 72px;">
                         <img src="img/Tech.png" height="50" width="50">
@@ -86,7 +95,8 @@
                     </div>
                 </div>
                 {{-- Тизер 4 --}}
-                <div class="d-flex col-12 col-md-6 col-lg-3 my-3 justify-content-lg-center justify-content-md-start px-0" style="">
+                <div class="d-flex col-12 col-md-6 col-lg-3 my-3 justify-content-lg-center justify-content-md-start px-0"
+                    style="">
                     <div class="d-flex align-items-center justify-content-lg-center justify-content-md-start col-lg-3 col-md-3 col-2"
                         style="height: 72px;">
                         <img src="img/Study.png" height="50" width="50">
@@ -106,7 +116,8 @@
         <div class="mx-auto col-11 col-lg-10" style="background: #F8F8F8;">
             <div class="d-flex justify-content-between align-items-center mt-5">
                 <div class="col-lg-4 col-sm-6 col-md-10 title">Услуги</div>
-                <div class="col-lg-1 col-sm-6 col-md-2 mt-1 title-link">Все
+                <a href="{{ route('servicessections') }}"
+                    class="col-lg-1 col-sm-6 col-md-2 mt-1 title-link text-decoration-none">Все
                     услуги
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                         fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"
@@ -114,10 +125,8 @@
                         <path fill-rule="evenodd"
                             d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                     </svg>
-                </div>
+                </a>
             </div>
-
-
             <div class="mt-4 col-lg-8 col-md-12 title-preview">
                 Решаем задачи вашего
                 бизнеса — от выбора хостинга до интеграции CRM систем и систем складского учета.
@@ -126,100 +135,35 @@
             </div>
             <div
                 class="my-5 d-flex justify-content-between row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
-                {{-- Карточка 1 --}}
-                <div class="col-lg-3 col-md-6 col-sm-12 my-4">
-                    <div class="border-custom bg-white">
-                        <div class="" style="height: 235px; background: #fafafa;border-top-left-radius: 4px; border-top-right-radius: 4px;">
-                            <img class="" style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: 4px; border-top-right-radius: 4px;"
-                                src="https://unternehmer.de/wp-content/uploads/2016/09/cms-baukausten-website-erstellen.jpg"
-                                height="235">
-                        </div>
-                        <div class="col-9 mx-auto text-montserrat">
-                            <div class="pt-5 card-title-over">
-                                Классический одностраничник</div>
-                            <div class="my-3 card-title">Лендинговый сайт</div>
+                @if ($services != null)
+                    @foreach ($services as $service)
+                        <div class="col-lg-3 col-md-6 col-sm-12 my-4">
+                            <div class="border-custom bg-white">
+                                <div class=""
+                                    style="height: 235px; background: #fafafa;border-top-left-radius: 4px; border-top-right-radius: 4px;">
+                                    <img class=""
+                                        style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: 4px; border-top-right-radius: 4px;"
+                                        src="/storage/{{ $service->anounce_image }}" height="235">
+                                </div>
+                                <div class="col-9 mx-auto text-montserrat">
+                                    <div class="pt-5 card-title-over">
+                                        {{ Services_tree::find($service->section_id)->title }}</div>
+                                    <div class="my-3 card-title"><a
+                                            href="{{ route('ShowDetailPage', $id = $service->id) }}"
+                                            class="text-decoration-none text-black">{{ $service->title }}</a>
+                                    </div>
 
-                            <div class="title-preview">Даже самому небольшому бизнесу, небольшой фирме, ИП или просто самозанятому обязательно иметь сайт для продвижения своих услуг в интернете.
-                                Заявите о себе целому миру с помощью небольшого удобного лендинга.
+                                    <div class="title-preview">{!! $service->anounce_text !!}
+                                    </div>
+
+                                    <div class="my-4">от {{ $service->cost }}</div>
+                                    <a href="#"
+                                        class="btn btn-outline-primary mt-3 mb-4 col-12 fw-bolder text-montserrat fs-14">Заказать</a>
+                                </div>
                             </div>
-
-                            <div class="my-4">от 25 000₽</div>
-                            <a href="#"
-                                class="btn btn-outline-primary mt-3 mb-4 col-12 fw-bolder text-montserrat fs-14">Заказать</a>
                         </div>
-                    </div>
-                </div>
-                {{-- Карточка 2 --}}
-                <div class="col-lg-3 col-md-6 col-sm-12 my-4">
-                    <div class="border-custom bg-white">
-                        <div class="" style="height: 235px; background: #fafafa;border-top-left-radius: 4px; border-top-right-radius: 4px;">
-                            <img class="" style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: 4px; border-top-right-radius: 4px;"
-                                src="https://malevich1.ru/%D1%81%D0%B0%D0%B9%D1%822.png" height="235">
-                        </div>
-                        <div class="col-9 mx-auto text-montserrat">
-                            <div class="pt-5 card-title-over">
-                                Классический одностраничник</div>
-                            <div class="my-3 card-title">Персональный сайт</div>
-
-                            <div class="title-preview">Вы творческая личность, отличный специалист или вам просто хочется рассказать о своем хобби?
-                                Вам нужно разместить свое портфолио , записи блога?
-                                Персональная страница поможет вам всем на что вы способны
-                            </div>
-
-                            <div class="my-4">от 25 000₽</div>
-                            <a href="#"
-                                class="btn btn-outline-primary mt-3 mb-4 col-12 fw-bolder text-montserrat fs-14">Заказать</a>
-                        </div>
-                    </div>
-                </div>
-                {{-- Карточка 3 --}}
-                <div class="col-lg-3 col-md-6 col-sm-12 my-4">
-                    <div class="border-custom bg-white">
-                        <div class="" style="height: 235px; background: #fafafa;border-top-left-radius: 4px; border-top-right-radius: 4px;">
-                            <img class="" style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: 4px; border-top-right-radius: 4px;"
-                                src="https://media.istockphoto.com/id/1257044925/ru/%D0%B2%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%B0%D1%8F/%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%86%D0%B8%D1%8F-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82-%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD%D0%BE%D0%B2-%D0%BD%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%B5.jpg?s=612x612&w=0&k=20&c=o0vz2sj9tctOimYrF11EdJ8ReLDlZHpElPCeSFGWN7g=">
-                        </div>
-                        <div class="col-9 mx-auto text-montserrat">
-                            <div class="pt-5 card-title-over">
-                                Классический одностраничник</div>
-                            <div class="my-3 card-title">Интернет-магазин</div>
-
-                            <div class="title-preview">Увеличение продаж, масштабирование бизнеса,
-                                выход на новые рынки сбыта, возможность продажи из любой точки мира - это
-                                лишь малая часть того, что может сделать для вас интернет-магазин.
-                            </div>
-
-                            <div class="my-4">от 40 000₽</div>
-                            <a href="#"
-                                class="btn btn-outline-primary mt-3 mb-4 col-12 fw-bolder text-montserrat fs-14">Заказать</a>
-                        </div>
-                    </div>
-                </div>
-                {{-- Карточка 4 --}}
-                <div class="col-lg-3 col-md-6 col-sm-12 my-4">
-                    <div class="border-custom bg-white">
-                        <div class="" style="height: 235px; background: #fafafa;border-top-left-radius: 4px; border-top-right-radius: 4px;">
-                            <img class="" style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: 4px; border-top-right-radius: 4px;"
-                                src="https://top3.pro/upload/iblock/2e4/2e4dac28c18cd1aa76f7111dc7ddf970.png"
-                                height="235">
-                        </div>
-                        <div class="col-9 mx-auto text-montserrat">
-                            <div class="pt-5 card-title-over">
-                                Классический одностраничник</div>
-                            <div class="my-3 card-title">Корпоративный сайт</div>
-
-                            <div class="title-preview">В
-                                коммерческих организациях часто упускается много
-                                незафиксированной информации, даже если сотрудники ответственны и имеют
-                                хорошую память. Автоматизация отдела продаж поможет это исправить.
-                            </div>
-
-                            <div class="my-4">от 50 000₽</div>
-                            <a href="#"
-                                class="btn btn-outline-primary mt-3 mb-4 col-12 fw-bolder text-montserrat fs-14">Заказать</a>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
             </div>
         </div>
         {{-- Разделитель (полоска вместо <hr>) --}}
@@ -230,7 +174,8 @@
             <div class="d-flex justify-content-between align-items-center mt-1">
                 <div class="col-lg-4 col-sm-6 col-md-10 title">Все самое
                     интересное</div>
-                <div class="col-lg-1 col-sm-6 col-md-2 mt-1 title-link">Все
+                <a href="{{ route('news') }}"
+                    class="col-lg-1 col-sm-6 col-md-2 mt-1 title-link text-decoration-none">Все
                     статьи
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                         fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"
@@ -238,7 +183,7 @@
                         <path fill-rule="evenodd"
                             d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                     </svg>
-                </div>
+                </a>
             </div>
             <div class="mt-4 col-lg-8 col-md-12 title-preview">Мы постоянно развиваемся и помогаем
                 развиваться вам и вашему бизнесу. В блоге мы публикуем статьи с новостями нашей
@@ -249,78 +194,32 @@
             <div
                 class="my-5 d-flex justify-content-between row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
                 {{-- Карта 1 --}}
-                <div class="col-lg-3 col-md-6 col-sm-12 my-4">
-                    <div class="border-custom bg-white">
-                        <div class="" style="height: 235px; background: #fafafa"></div>
-                        <div class="col-10 mx-auto my-4 text-montserrat">
-                            <div class="d-flex justify-content-start">
-                                <div class="border rounded-1 bg-light py-1 px-3 card-title-over">
-                                    Дизайн
+                @if ($posts != null)
+                    @foreach ($posts as $post)
+                        <div class="col-lg-3 col-md-6 col-sm-12 my-4">
+                            <div class="border-custom bg-white" style="min-height: 420px;">
+                                <div class=""
+                                    style="height: 235px; background: #fafafa url('/storage/{{ $post->anounce_image }}') no-repeat; background-size: cover;">
+                                </div>
+                                <div class="col-10 mx-auto my-4 text-montserrat">
+                                    <div class="d-flex justify-content-start">
+                                        {{-- <div
+                                            class="border rounded-1 bg-light py-1 px-3 card-title-over">
+                                            Дизайн
+                                        </div> --}}
+                                    </div>
+                                    <div class="my-3 card-title"><a
+                                            href="{{ route('new_detail', $id = $post->id) }}"
+                                            class="text-decoration-none text-black">{{ $post->title }}</a>
+                                    </div>
+                                    <div class="mt-5 card-date">
+                                        {{ $post->created_at = date('d.F.y') }}
+                                    </div>
                                 </div>
                             </div>
-                            <div class="my-3 card-title">Дизайн интерьера. Стиль
-                                Фьюжн</div>
-
-                            <div class="mt-5 card-date">14
-                                февраля 2021</div>
                         </div>
-                    </div>
-                </div>
-                {{-- Карта 2 --}}
-                <div class="col-lg-3 col-md-6 col-sm-12 my-4">
-                    <div class="border-custom bg-white">
-                        <div class="" style="height: 235px; background: #fafafa"></div>
-                        <div class="col-10 mx-auto my-4 text-montserrat">
-                            <div class="d-flex justify-content-start">
-                                <div class="border rounded-1 bg-light py-1 px-3 card-title-over">
-                                    Бизнес-советы
-                                </div>
-                            </div>
-                            <div class="my-3 card-title">5 правил настройки
-                                онлайн-консультанта для интернет-магазина</div>
-
-                            <div class="mt-5 card-date">8
-                                января 2021</div>
-                        </div>
-                    </div>
-                </div>
-                {{-- Карта 3 --}}
-                <div class="col-lg-3 col-md-6 col-sm-12 my-4">
-                    <div class="border-custom bg-white">
-                        <div class="" style="height: 235px; background: #fafafa"></div>
-                        <div class="col-10 mx-auto my-4 text-montserrat">
-                            <div class="d-flex justify-content-start">
-                                <div class="border rounded-1 bg-light py-1 px-3 card-title-over">
-                                    Управление проектами
-                                </div>
-                            </div>
-                            <div class="my-3 card-title">Как мотивировать
-                                сотрудников без дополнительных затрат</div>
-
-                            <div class="mt-5 card-date">28
-                                апреля 2020</div>
-                        </div>
-                    </div>
-                </div>
-                {{-- Карта 4 --}}
-                <div class="col-lg-3 col-md-6 col-sm-12 my-4">
-                    <div class="border-custom bg-white">
-                        <div class="" style="height: 235px; background: #fafafa"></div>
-                        <div class="col-10 mx-auto my-4 text-montserrat">
-                            <div class="d-flex justify-content-start">
-                                <div class="border rounded-1 bg-light py-1 px-3 card-title-over">
-                                    Металлообработка
-                                </div>
-                            </div>
-                            <div class="my-3 card-title">Использование арматуры
-                                в
-                                строительстве</div>
-
-                            <div class="mt-5 card-date">1
-                                марта 2020</div>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
             </div>
         </div>
         {{-- Разделитель (полоска вместо <hr>) --}}
@@ -332,14 +231,16 @@
                 <div class="d-flex justify-content-between align-items-center mt-1">
                     <div class="col-lg-4 col-sm-6 col-md-10 title">Команда
                     </div>
-                    <div class="col-lg-1 col-sm-6 col-md-2 mt-1 title-link">Вся команда
+                    <a href="{{ route('personal') }}"
+                        class="col-lg-1 col-sm-6 col-md-2 mt-1 title-link text-decoration-none">Вся
+                        команда
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"
                             style="transform: rotate(-90deg);">
                             <path fill-rule="evenodd"
                                 d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                         </svg>
-                    </div>
+                    </a>
                 </div>
                 <div class="text-muted mt-4 col-lg-8 col-md-12 title-preview">Сотрудники — ключевое
                     звено нашей компании. У нас работают специалисты узкого и широкого профиля, что
@@ -350,78 +251,32 @@
                 {{-- Вывод новостей --}}
                 <div
                     class="py-5 d-flex justify-content-between row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
-                    {{-- Карта 1 --}}
-                    <div class="col-lg-3 col-md-6 col-sm-12 my-4">
-                        <div class="border rounded-2"
-                            style="background: #fafafa url(img/Person.png);
+                    @if ($users != null)
+                        @foreach ($users as $user)
+                            <div class="col-lg-3 col-md-6 col-sm-12 my-4">
+                                <div class="border rounded-2"
+                                    style="background: #fafafa url(/storage/{{ $user->anounce_image }});
 
                         background-size: cover;
                         background-position: center;
                         background-repeat: no-repeat;">
-                            <div class="col-10 mx-auto my-4 d-flex align-items-end"
-                                style="height: 450px;">
-                                <div class="">
-                                    <div class="col-12 card-title-over">
-                                        Веб-разработчик</div>
-                                    <div class="col-12 mb-3 mt-1 card-title">
-                                        Дамир
-                                        Хайбулин
-                                    </div>
-                                </div>
+                                    <div class="col-10 mx-auto my-4 d-flex align-items-end"
+                                        style="height: 450px;">
+                                        <div class="">
+                                            <div class="col-12 card-title-over">
+                                                {{ $user->job }}</div>
+                                            <div class="col-12 mb-3 mt-1 card-title">
+                                                <a href="{{ route('personal_detail', $id = $user->id) }}"
+                                                    class="text-decoration-none text-black">{{ $user->name }}
+                                                    {{ $user->surname }}</a>
+                                            </div>
+                                        </div>
 
-                            </div>
-                        </div>
-                    </div>
-                    {{-- Карта 2 --}}
-                    <div class="col-lg-3 col-md-6 col-sm-12 my-4">
-                        <div class="border rounded-2" style="background: #fafafa">
-                            <div class="col-10 mx-auto my-4 d-flex align-items-end"
-                                style="height: 450px;">
-                                <div class="">
-                                    <div class="col-12 card-title-over">
-                                        Веб-разработчик</div>
-                                    <div class="col-12 mb-3 mt-1 card-title">
-                                        Дамир
-                                        Хайбулин
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    {{-- Карта 3 --}}
-                    <div class="col-lg-3 col-md-6 col-sm-12 my-4">
-                        <div class="border rounded-2" style="background: #fafafa">
-                            <div class="col-10 mx-auto my-4 d-flex align-items-end"
-                                style="height: 450px;">
-                                <div class="">
-                                    <div class="col-12 card-title-over">
-                                        Веб-разработчик</div>
-                                    <div class="col-12 mb-3 mt-1 card-title">
-                                        Дамир
-                                        Хайбулин
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    {{-- Карта 4 --}}
-                    <div class="col-lg-3 col-md-6 col-sm-12 my-4">
-                        <div class="border rounded-2" style="background: #fafafa">
-                            <div class="col-10 mx-auto my-4 d-flex align-items-end"
-                                style="height: 450px;">
-                                <div class="">
-                                    <div class="col-12 card-title-over">
-                                        Веб-разработчик</div>
-                                    <div class="col-12 mb-3 mt-1 card-title">
-                                        Дамир
-                                        Хайбулин
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>
@@ -459,14 +314,16 @@
                 <div class="d-flex justify-content-between align-items-center mt-1">
                     <div class="col-lg-6 col-sm-6 col-md-10 title">
                         Результат нашей работы</div>
-                    <div class="col-lg-1 col-sm-6 col-md-2 mt-1 title-link">Все проекты
+                    <a href="{{ route('projects') }}"
+                        class="col-lg-1 col-sm-6 col-md-2 mt-1 title-link text-decoration-none">Все
+                        проекты
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"
                             style="transform: rotate(-90deg);">
                             <path fill-rule="evenodd"
                                 d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                         </svg>
-                    </div>
+                    </a>
                 </div>
                 <div class="mt-4 col-lg-8 col-md-12 title-preview">Реализованные проекты
                     —
@@ -475,57 +332,32 @@
                     работы
                     специалистов. Смотрите, изучайте и пишите вопросы нам на почту.
                 </div>
-                {{-- Вывод новостей --}}
+                {{-- Вывод проектов --}}
                 <div
                     class="my-5 d-flex justify-content-between row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
-                    {{-- Карта 1 --}}
-                    <div class="col-lg-4 col-md-6 col-sm-12 my-4">
-                        <div class="border-custom"
-                            style="background: #fafafa url(https://i.pinimg.com/564x/64/65/06/6465065d782008e249fca3d4d45c9edf.jpg)">
-                            <div class="col-10 mx-auto my-4 d-flex align-items-end"
-                                style="height: 250px;">
-                                <div class="">
-                                    <div class="col-12 card-title-over">
-                                        Название работы</div>
-                                    <div class="col-12 mb-3 mt-1 card-title">
-                                        Портфолио 1
+                    @if ($projects != null)
+                        @foreach ($projects as $project)
+                            <div class="col-lg-4 col-md-6 col-sm-12 my-4">
+                                <div class="border-custom"
+                                    style="background: #fafafa url(/storage/{{ $project->anounce_image }});background-size: cover;">
+                                    <div class="col-10 mx-auto my-4 d-flex align-items-end"
+                                        style="height: 250px;">
+                                        <div class="">
+                                            {{-- <div class="col-12 card-title-over">
+                                                Название работы</div> --}}
+                                            <div class="col-12 mb-3 mt-1 card-title rounded-2 py-2 px-4"
+                                                style="background: #ffffff;">
+                                                <div class="card-title-over">{{ $project->sphere }}
+                                                </div>
+                                                <a href="{{ route('ShowProjectDetailPage', $id = $project->id) }}"
+                                                    class="text-decoration-none text-black">{{ $project->title }}</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    {{-- Карта 2 --}}
-                    <div class="col-lg-4 col-md-6 col-sm-12 my-4">
-                        <div class="border-custom"
-                            style="background: #fafafa url(https://i.pinimg.com/564x/44/f7/4a/44f74a6252a5610c39340838ac92fc50.jpg)">
-                            <div class="col-10 mx-auto my-4 d-flex align-items-end"
-                                style="height: 250px;">
-                                <div class="">
-                                    <div class="col-12 card-title-over">
-                                        Название работы</div>
-                                    <div class="col-12 mb-3 mt-1 card-title">
-                                        Портфолио 2
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {{-- Карта 3 --}}
-                    <div class="col-lg-4 col-md-6 col-sm-12 my-4">
-                        <div class="border-custom"
-                            style="background: #fafafa url(https://i.pinimg.com/564x/b4/03/7c/b4037ca90ee8415f7980c5d827e577ff.jpg)">
-                            <div class="col-10 mx-auto my-4 d-flex align-items-end"
-                                style="height: 250px;">
-                                <div class="">
-                                    <div class="col-12 card-title-over">
-                                        Название работы</div>
-                                    <div class="col-12 mb-3 mt-1 card-title">
-                                        Портфолио 3
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @endif
                 </div>
             </div>
             {{-- Разделитель (полоска вместо <hr>) --}}
@@ -552,8 +384,8 @@
                                 вариант решения нужд вашего бизнеса в сайте.
                             </div>
                             <div class="mt-5">
-                                <button type="button"
-                                    class="btn btn-outline-primary px-5 py-2 fw-bolder text-montserrat fs-14">Подробнее</button>
+                                <a href="{{ route('about') }}" type="button"
+                                    class="btn btn-outline-primary px-5 py-2 fw-bolder text-montserrat fs-14">Подробнее</a>
                             </div>
                         </div>
                     </div>
@@ -588,7 +420,8 @@
                             Развивайте бизнес, масштабируйте и выстраивайте крепкие отношения с
                             клиентами благодаря удобному сайту.
                         </div>
-                        <div class="row row-cols-lg-2 row-cols-md-2 row-cols-1 my-lg-5 mt-md-5 mt-5" style="min-height: 300px;">
+                        <div class="row row-cols-lg-2 row-cols-md-2 row-cols-1 my-lg-5 mt-md-5 mt-5"
+                            style="min-height: 300px;">
                             <div class="col md-lg-0 mb-md-0 mb-5">
                                 <div class="fw-bold text-primary text-roboto fs-22">
                                     Клиентоориентированность</div>
@@ -622,7 +455,7 @@
             <div class="col-12" style="height: 1.5px; background: #E5E5E5;"></div>
             {{-- Блок обратной связи --}}
             <div class="d-flex align-items-center pt-5 pt-lg-0"
-                style="min-height: 683px; background: url(https://allcorp3-demo.ru/upload/CAllcorp3/623/623f79835b25f993eec6a18e522c8422.jpg)">
+                style="min-height: 683px; background: url(https://allcorp3-demo.ru/upload/CAllcorp3/623/623f79835b25f993eec6a18e522c8422.jpg) no-repeat; background-size: cover;">
                 <div
                     class="col-11 col-lg-10 mx-auto d-flex justify-content-center row row-cols-lg-2 row-cols-md-1">
                     {{-- Первая половина --}}
@@ -645,13 +478,13 @@
                     </div>
                     {{-- Вторая половина с формой обратной связи --}}
                     <div class="col-lg-6 col-12 mt-3 mb-lg-0 mb-5 mt-lg-0">
-                        <form action="" method="post">
-
+                        <form action="{{ route('takerequest') }}" method="post">
+                            @csrf
                             <div class="my-4">
                                 <label for="exampleFormControlInput1"
                                     class="form-label title-over">Ваше имя
                                     *</label>
-                                <input type="email" class="form-control rounded-1"
+                                <input type="text" class="form-control rounded-1"
                                     id="exampleFormControlInput1"
                                     style="background: #F8F8F8; height: 48px;">
                             </div>
@@ -659,8 +492,16 @@
                             <div class="my-4">
                                 <label for="exampleFormControlInput1"
                                     class="form-label title-over">Телефон *</label>
-                                <input type="email" class="form-control rounded-1"
+                                <input type="text" class="form-control rounded-1"
                                     id="exampleFormControlInput1"
+                                    style="background: #F8F8F8; height: 48px;">
+                            </div>
+
+                            <div class="my-4">
+                                <label for="exampleFormControlInput1"
+                                    class="form-label title-over">Email *</label>
+                                <input type="email" class="form-control rounded-1"
+                                    id="exampleFormControlInput1" name="email"
                                     style="background: #F8F8F8; height: 48px;">
                             </div>
 
@@ -686,7 +527,7 @@
                                     Я согласен на обработку персональных данных
                                 </label>
                             </div>
-                            <button type="button"
+                            <button type="submit"
                                 class="btn btn-primary fw-bolder text-montserrat fs-14 px-5 py-2 mt-5">Отправить</button>
                         </form>
                     </div>

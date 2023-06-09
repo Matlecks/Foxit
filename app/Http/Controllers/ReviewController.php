@@ -5,15 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Review;
 use App\Models\User;
+use App\Models\BaseInfo;
 
 class ReviewController extends Controller
 {
 
     public function index()
     {
-        $reviews = Review::all();
+        $reviews = Review::where('status','=','public')->limit(4)->get();
+        $contacts = BaseInfo::first();
 
-        return view('reviews', compact('reviews'));
+        return view('reviews', compact('reviews','contacts'));
     }
 
     public function ShowTable()
