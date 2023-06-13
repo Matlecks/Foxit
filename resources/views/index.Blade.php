@@ -50,11 +50,11 @@
                     <div class="mt-5">
                         <label for="form-login" class="form-label title-over">Логин
                             <span style="color: #F25353">*</span></label>
-                        <input class="form-control form-login-1" type="text" id="form-login"
+                        <input class="form-control form-login-1 @error('login') is-invalid @enderror" type="text" id="form-login"
                             name="login">
                         <label for="form-password" class="form-label title-over mt-4">Пароль <span
                                 style="color: #F25353">*</span></label>
-                        <input class="form-control form-login-1" type="text" id="form-password"
+                        <input class="form-control form-login-1 @error('password') is-invalid @enderror" type="text" id="form-password"
                             name="password">
                         <div class="d-flex justify-content-between mt-4">
                             <div class="col-5">

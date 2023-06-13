@@ -101,43 +101,31 @@
                 <label for="job" class="form-label title-over mt-5">Должность</label>
                 <input class="form-control form-login-1 w-25" type="text" id="job"
                     value="{{ $element->job }}" name="job">
-                <label for="avatar" class="form-label title-over mt-5">Аватар</label>
-                <input class="form-control w-25" type="file" id="avatar" name="avatar">
-                <label for="logo" class="form-label title-over mt-5">Логотип</label>
-                <input class="form-control w-25" type="file" id="logo" name="logo">
+                <div class="d-flex align-items-end col-3">
+                    <div class="w-100">
+                        <label for="avatar" class="form-label title-over mt-5">Аватар</label>
+                        <input class="form-control w-100" type="file" id="avatar"
+                            name="avatar">
+                    </div>
+                    <img src="/storage/{{ $element->avatar }}" class="ms-4"
+                        style="height: 50px; weight: 50px;">
+                </div>
+                <div class="d-flex align-items-end col-3">
+                    <div class="w-100">
+                        <label for="logo" class="form-label title-over mt-5">Логотип</label>
+                        <input class="form-control w-100" type="file" id="logo"
+                            name="logo">
+                    </div>
+                    <img src="/storage/{{ $element->logo }}" class="ms-4"
+                        style="height: 50px; weight: 50px;">
+                </div>
                 <label for="form-login" class="form-label title-over mt-5">Группа</label>
                 <select class="form-select w-25" name="role">
-                    @if ($element->role == 'Admin')
-                        <option selected value="Admin">Админ</option>
-                        <option value="User">Зарегистрированный пользователь</option>
-                        <option value="NoUser">Незарегистрированный пользователь</option>
-                        <option value="Sotrudnik">Сотрудник</option>
-                        <option value="Client">Клиент</option>
-                    @elseif($element->role == 'User')
-                        <option selected value="User">Зарегистрированный пользователь</option>
-                        <option value="Admin">Админ</option>
-                        <option value="NoUser">Незарегистрированный пользователь</option>
-                        <option value="Sotrudnik">Сотрудник</option>
-                        <option value="Client">Клиент</option>
-                    @elseif($element->role == 'NoUser')
-                        <option selected value="NoUser">Незарегистрированный пользователь</option>
-                        <option value="Admin">Админ</option>
-                        <option value="User">Зарегистрированный пользователь</option>
-                        <option value="Sotrudnik">Сотрудник</option>
-                        <option value="Client">Клиент</option>
-                    @elseif($element->role == 'Sotrudnik')
-                        <option selected value="Sotrudnik">Сотрудник</option>
-                        <option value="Admin">Админ</option>
-                        <option value="User">Зарегистрированный пользователь</option>
-                        <option value="NoUser">Незарегистрированный пользователь</option>
-                        <option value="Client">Клиент</option>
-                    @elseif($element->role == 'Client')
-                        <option selected value="Client">Клиент</option>
-                        <option value="Admin">Админ</option>
-                        <option value="User">Зарегистрированный пользователь</option>
-                        <option value="NoUser">Незарегистрированный пользователь</option>
-                        <option value="Sotrudnik">Сотрудник</option>
-                    @endif
+                    <option selected value="{{ $role_selected->role }}">{{ $role_selected->title }}
+                    </option>
+                    @foreach ($roles as $role)
+                        <option value="{{ $role->role }}">{{ $role->title }}</option>
+                    @endforeach
                 </select>
 
                 <label for="form-login" class="form-label title-over mt-5">Номер телефона</label>
@@ -160,7 +148,7 @@
         @elseif($title == 'Раздел')
             <div class="accordion-body mt-2">
                 <label for="form-login" class="form-label title-over mt-5">Название</label>
-                <input class="form-control form-login-1" value="{{ $element->title }}"
+                <input class="form-control form-login-1 @error('title') is-invalid @enderror" value="{{ $element->title }}"
                     type="text" id="form-login" name="title">
                 <label for="form-login" class="form-label title-over mt-5">Группа</label>
                 <select class="form-select w-25" name="section">
@@ -191,30 +179,13 @@
         @elseif($title == 'Услуга')
             <div class="accordion-body mt-2">
                 <label for="form-login" class="form-label title-over mt-5">Название</label>
-                <input class="form-control form-login-1" value="{{ $element->title }}"
+                <input class="form-control form-login-1 @error('title') is-invalid @enderror" value="{{ $element->title }}"
                     type="text" id="form-login" name="title">
                 <label for="form-login" class="form-label title-over mt-5">Группа</label>
                 <select class="form-select w-25" name="section">
-                    @if ($parent_id == 0)
-                        <option selected value="0">Верхний раздел</option>
-                    @else
-                        <option selected value="{{ $parent_section->id }}">
-                            {{ $parent_section->title }}</option>
-                    @endif
+                    <option selected value="{{ $parent_section->id }}">{{ $parent_section->title }}
+                    </option>
                     @foreach ($sections as $section)
-                        @if ($parent_id == 0)
-                        @elseif ($section->id <= 1)
-                            <option value="0">Верхний раздел</option>
-                        @endif
-                        @if ($parent_id == 0)
-                        @else
-                            @if ($parent_section->id == $section->id)
-                                @continue
-                            @endif
-                        @endif
-                        @if (($section->parent_id == $parent_id) & ($section->id == $id))
-                            @continue
-                        @endif
                         <option value="{{ $section->id }}">{{ $section->title }}</option>
                     @endforeach
                 </select>
@@ -228,7 +199,7 @@
         @elseif($title == 'Проект')
             <div class="accordion-body mt-2">
                 <label for="form-login" class="form-label title-over mt-5">Название</label>
-                <input class="form-control form-login-1" value="{{ $element->title }}"
+                <input class="form-control form-login-1 @error('title') is-invalid @enderror" value="{{ $element->title }}"
                     type="text" id="form-login" name="title">
                 <label for="form-login" class="form-label title-over mt-5">Сфера</label>
                 <input class="form-control form-login-1" value="{{ $element->sphere }}"
@@ -240,7 +211,7 @@
         @else
             <div class="accordion-body mt-2">
                 <label for="form-login" class="form-label title-over mt-5">Название</label>
-                <input class="form-control form-login-1" value="{{ $element->title }}"
+                <input class="form-control form-login-1 @error('title') is-invalid @enderror" value="{{ $element->title }}"
                     type="text" id="form-login" name="title">
             </div>
             @endif
@@ -248,10 +219,17 @@
         <div id="collapse-element-anounce" class="accordion-collapse collapse"
             data-bs-parent="#accordionFlushExample">
             <div class="accordion-body mt-2">
-                <label for="AononceImg" class="form-label title-over mt-5">Картинка
-                    анонса</label>
-                <input class="form-control" type="file" id="AononceImg"
-                    value="{{ $element->anounce_image }}" name="anounce_image">
+                <div class="d-flex align-items-end col-3">
+                    <div class="w-100">
+                        <label for="AononceImg" class="form-label title-over mt-5">Картинка
+                            анонса</label>
+                        <input class="form-control @error('anounce_image') is-invalid @enderror"
+                            type="file" id="AononceImg" value="{{ $element->anounce_image }}"
+                            name="anounce_image">
+                    </div>
+                    <img src="/storage/{{ $element->anounce_image }}" class="ms-4"
+                        style="height: 50px; weight: 50px;">
+                </div>
                 <label for="AnounceText" class="form-label title-over mt-4">Описание
                     анонса</label>
                 <textarea class="form-control" id="AnounceText" rows="3" name="anounce_text">{{ $element->anounce_text }}</textarea>
@@ -260,10 +238,17 @@
         <div id="collapse-element-details" class="accordion-collapse collapse"
             data-bs-parent="#accordionFlushExample">
             <div class="accordion-body mt-2">
-                <label for="DetailsImg" class="form-label title-over mt-5">Детальная
-                    картинка</label>
-                <input class="form-control" type="file" id="DetailsImg"
-                    value="{{ $element->details_image }}" name="details_image">
+                <div class="d-flex align-items-end col-3">
+                    <div class="w-100">
+                        <label for="DetailsImg" class="form-label title-over mt-5">Детальная
+                            картинка</label>
+                        <input class="form-control @error('details_image') is-invalid @enderror"
+                            type="file" id="DetailsImg" value="{{ $element->details_image }}"
+                            name="details_image">
+                    </div>
+                    <img src="/storage/{{ $element->details_image }}" class="ms-4"
+                        style="height: 50px; weight: 50px;">
+                </div>
                 <label for="DetailsText" class="form-label title-over mt-4">Детальное
                     описание</label>
                 <textarea class="form-control" id="DetailsText" rows="3" name="details_text">{{ $element->details_text }}</textarea>
@@ -322,7 +307,7 @@
             <div class="accordion-body mt-2">
                 @if (isset($users) & !isset($selected_users))
                     <label for="form-login" class="form-label title-over mt-5">Сотрудник</label>
-                    <select multiple class="form-select w-25" name="users_id">
+                    <select multiple class="form-select w-25 @error('users_id') is-invalid @enderror" name="users_id">
                         @foreach ($users as $user)
                             <option value="{{ $user->id }}">{{ $user->name }}
                                 {{ $user->surname }}</option>
@@ -331,7 +316,7 @@
                 @endif
                 @if (isset($selected_users))
                     <label for="form-login" class="form-label title-over mt-5">Сотрудник</label>
-                    <select multiple class="form-select w-25" name="users_id[]">
+                    <select multiple class="form-select w-25 @error('users_id') is-invalid @enderror" name="users_id[]">
                         @foreach ($selected_users as $user)
                             <option selected value="{{ $user->id }}">{{ $user->name }}
                                 {{ $user->surname }}</option>

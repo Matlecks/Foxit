@@ -93,6 +93,14 @@ class PostsController extends Controller
 
     public function UpdatePost(Request $request, $id)
     {
+        $validated = $request->validate([
+
+            'title' => 'required',
+            'anounce_image' => 'image',
+            'details_image' => 'image',
+
+        ]);
+
         $post = Posts::find($id);
 
         $post->title = ($request->title);

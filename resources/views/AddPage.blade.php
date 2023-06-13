@@ -90,39 +90,50 @@
                 @elseif($title == 'Пользователь')
                     <div class="accordion-body mt-2">
                         <label for="form-login" class="form-label title-over mt-5">Имя</label>
-                        <input class="form-control form-login-1 w-25" type="text" id="form-login"
-                            name="name">
+                        <input
+                            class="form-control form-login-1 w-25 @error('name') is-invalid @enderror"
+                            type="text" id="form-login" name="name">
                         <label for="form-login" class="form-label title-over mt-5">Фамилия</label>
-                        <input class="form-control form-login-1 w-25" type="text" id="form-login"
-                            name="surname">
+                        <input
+                            class="form-control form-login-1 w-25 @error('surname') is-invalid @enderror"
+                            type="text" id="form-login" name="surname">
                         <label for="job" class="form-label title-over mt-5">Должность</label>
                         <input class="form-control form-login-1 w-25" type="text" id="job"
                             name="job">
                         <label for="avatar" class="form-label title-over mt-5">Аватар</label>
-                        <input class="form-control w-25" type="file" id="avatar"
-                            name="avatar">
+                        <input class="form-control w-25 @error('avatar') is-invalid @enderror"
+                            type="file" id="avatar" name="avatar">
                         <label for="logo" class="form-label title-over mt-5">Логотип</label>
-                        <input class="form-control w-25" type="file" id="logo"
+                        <input class="form-control w-25 @error('logo') is-invalid @enderror" type="file" id="logo"
                             name="logo">
                         <label for="form-login" class="form-label title-over mt-5">Группа</label>
-                        <select class="form-select w-25" name="role">
-                            <option value="Admin">Админ</option>
-                            <option value="User">Зарегистрированный пользователь</option>
-                            <option value="NoUser">Незарегистрированный пользователь</option>
-                            <option value="Sotrudnik">Сотрудник</option>
-                            <option value="Client">Клиент</option>
+                        <select class="form-select w-25 @error('name') is-invalid @enderror"
+                            name="role">
+                            @foreach ($roles as $role)
+                                <option value="{{ $role->role }}">{{ $role->title }}</option>
+                            @endforeach
                         </select>
 
                         <label for="form-login" class="form-label title-over mt-5">Номер
                             телефона</label>
-                        <input class="form-control form-login-1 w-25" type="text" id="form-login"
-                            name="phone">
+                        <input
+                            class="form-control form-login-1 w-25 @error('phone') is-invalid @enderror"
+                            type="text" id="form-login" name="phone">
                         <label for="form-login" class="form-label title-over mt-5">Email</label>
-                        <input class="form-control form-login-1 w-25" type="text" id="form-login"
+                        <input
+                            class="form-control form-login-1 w-25 @error('email') is-invalid @enderror"
+                            type="text" id="form-login" value="{{ old('title') }}"
                             name="email">
+                        @error('email')
+                            <span class="form-label title-over mt-1" style="color: #dc3545;">Email-адрес
+                                занят
+                                или имеет некорректное значение</span>
+                            <br>
+                        @enderror
                         <label for="form-login" class="form-label title-over mt-5">Логин</label>
-                        <input class="form-control form-login-1 w-25" type="text" id="form-login"
-                            name="login">
+                        <input
+                            class="form-control form-login-1 w-25 @error('login') is-invalid @enderror"
+                            type="text" id="form-login" name="login">
                         <label for="form-login" class="form-label title-over mt-5">Новый
                             пароль</label>
                         <input class="form-control form-login-1 w-25" type="text" id="form-login"
@@ -136,7 +147,7 @@
                 @elseif($title == 'Раздел')
                     <div class="accordion-body mt-2">
                         <label for="form-login" class="form-label title-over mt-5">Название</label>
-                        <input class="form-control form-login-1" type="text" id="form-login"
+                        <input class="form-control form-login-1 @error('title') is-invalid @enderror" type="text" id="form-login"
                             name="title">
                         <label for="form-login" class="form-label title-over mt-5">Группа</label>
                         <select class="form-select w-25" name="section">
@@ -148,7 +159,7 @@
                 @elseif($title == 'Услуга')
                     <div class="accordion-body mt-2">
                         <label for="form-login" class="form-label title-over mt-5">Название</label>
-                        <input class="form-control form-login-1" type="text" id="form-login"
+                        <input class="form-control form-login-1 @error('title') is-invalid @enderror" type="text" id="form-login"
                             name="title">
                         <label for="form-login" class="form-label title-over mt-5">Группа</label>
                         <select class="form-select w-25" name="section">
@@ -156,19 +167,17 @@
                                 <option value="{{ $section->id }}">{{ $section->title }}</option>
                             @endforeach
                         </select>
-                        <label for="form-login"
-                            class="form-label title-over mt-5">Цена</label>
+                        <label for="form-login" class="form-label title-over mt-5">Цена</label>
                         <input class="form-control form-login-1 w-25" type="text" id="form-login"
                             name="cost">
-                        <label for="form-login"
-                            class="form-label title-over mt-5">Категория</label>
+                        <label for="form-login" class="form-label title-over mt-5">Категория</label>
                         <input class="form-control form-login-1 w-25" type="text" id="form-login"
                             name="category">
                     </div>
                 @elseif($title == 'Проект')
                     <div class="accordion-body mt-2">
                         <label for="form-login" class="form-label title-over mt-5">Название</label>
-                        <input class="form-control form-login-1" type="text" id="form-login"
+                        <input class="form-control form-login-1 @error('title') is-invalid @enderror" type="text" id="form-login"
                             name="title">
                         <label for="form-login" class="form-label title-over mt-5">Сфера</label>
                         <input class="form-control form-login-1" type="text" id="form-login"
@@ -181,7 +190,7 @@
                 @else
                     <div class="accordion-body mt-2">
                         <label for="form-login" class="form-label title-over mt-5">Название</label>
-                        <input class="form-control form-login-1" type="text" id="form-login"
+                        <input class="form-control form-login-1 @error('title') is-invalid @enderror" type="text" id="form-login"
                             name="title">
                     </div>
                 @endif
@@ -191,7 +200,7 @@
                 <div class="accordion-body mt-2">
                     <label for="AononceImg" class="form-label title-over mt-5">Картинка
                         анонса</label>
-                    <input class="form-control" type="file" id="AononceImg" name="anounce_image">
+                    <input class="form-control @error('anounce_image') is-invalid @enderror" type="file" id="AononceImg" name="anounce_image">
                     <label for="AnounceText" class="form-label title-over mt-4">Описание
                         анонса</label>
                     <textarea class="form-control" id="AnounceText" rows="3" name="anounce_text"></textarea>
@@ -202,7 +211,7 @@
                 <div class="accordion-body mt-2">
                     <label for="DetailsImg" class="form-label title-over mt-5">Детальная
                         картинка</label>
-                    <input class="form-control" type="file" id="DetailsImg" name="details_image">
+                    <input class="form-control  @error('details_image') is-invalid @enderror" type="file" id="DetailsImg" name="details_image">
                     <label for="DetailsText" class="form-label title-over mt-4">Детальное
                         описание</label>
                     <textarea class="form-control" id="DetailsText" rows="3" name="details_text"></textarea>
@@ -261,7 +270,7 @@
                 <div class="accordion-body mt-2">
                     @if (isset($users))
                         <label for="form-login" class="form-label title-over mt-5">Сотрудник</label>
-                        <select multiple class="form-select w-25" name="users_id">
+                        <select multiple class="form-select w-25 @error('users_id') is-invalid @enderror" name="users_id">
                             @foreach ($users as $user)
                                 <option value="{{ $user->id }}">{{ $user->name }}
                                     {{ $user->surname }}</option>
@@ -288,6 +297,7 @@
             </div>
         </div>
         <hr class="mt-5">
+
         <div class="d-flex justify-content-start mt-5">
             <div class="col-3 pe-2">
                 <button type="submit"
@@ -296,5 +306,6 @@
             </div>
         </div>
         </form>
+
     </div>
 @endsection

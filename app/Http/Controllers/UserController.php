@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Validator;
 use App\Models\Projects;
 use App\Models\BaseInfo;
+use App\Models\Role;
 
 class UserController extends Controller
 {
@@ -19,7 +20,7 @@ class UserController extends Controller
         $users = User::all();
         $contacts = BaseInfo::first();
 
-        return view('personal', compact('users','contacts'));
+        return view('personal', compact('users', 'contacts'));
     }
 
     public function detail($id)
@@ -31,11 +32,25 @@ class UserController extends Controller
         $reviews = Review::where('id', '=', $user->reviews_id)->get();
         $contacts = BaseInfo::first();
 
-        return view('person_detail', compact('services', 'user', 'reviews', 'projects','contacts'));
+        return view('person_detail', compact('services', 'user', 'reviews', 'projects', 'contacts'));
     }
 
     public function UserAdd(Request $request)
     {
+
+        $validated = $request->validate([
+            'avatar' => 'image',
+            'logo' => 'image',
+            'anounce_image' => 'image',
+            'details_image' => 'image',
+            'email' => 'required|email|unique:users,email|max:255',
+            'name' => 'required',
+            'surname' => 'required',
+            'phone' => 'required',
+            'login' => 'required',
+            'password' => 'required|min:8|alpha_num',
+            'role_id' => 'required',
+        ]);
         if ($request->password == $request->confirm) {
             if ($request->role == null) {
                 $UserRole = "User";
@@ -105,7 +120,24 @@ class UserController extends Controller
 
             return redirect()->route('cabinet');
         } else {
-            return redirect()->route('main');
+
+            return redirect()->back();
+        }
+    }
+
+    public function AdminAuth(Request $request)
+    {
+        $credentials = $request->validate([
+            'login' => ['required'],
+            'password' => ['required'],
+        ]);
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()->route('adminpage');
+        } else {
+
+            return redirect()->back();
         }
     }
 
@@ -119,22 +151,44 @@ class UserController extends Controller
     {
         $title = "Пользователь";
         $projects = Projects::all();
+        $roles = Role::all();
 
-        return view('AddPage', compact('title','projects'));
+        return view('AddPage', compact('title', 'projects','roles'));
     }
 
     public function EditPageUser($id)
     {
         $element = User::withTrashed()->find($id);
 
+        $roles = Role::all();
         $title = "Пользователь";
         $projects = Projects::all();
         $selected_projects = $element->projects;
-        return view('EditPage', compact('element','title','projects','selected_projects'));
+
+        $role_id = User::find($id)->role_id;
+        $role_id_in_array = $role_id - 1;
+        $role_selected = Role::find($role_id);
+
+        foreach ($roles as $role) {
+            if ($role->id == $role_id) {
+                unset($roles[$role_id_in_array]);
+                break;
+            }
+        };
+
+        return view('EditPage', compact('element', 'title', 'projects', 'selected_projects', 'roles','role_selected'));
     }
 
     public function UpdateUser(Request $request, $id)
     {
+        $validated = $request->validate([
+            'avatar' => 'image',
+            'logo' => 'image',
+            'anounce_image' => 'image',
+            'detail_image' => 'image',
+            'email' => 'email|unique:users,email|max:255',
+            'password' => 'min:8|alpha_num',
+        ]);
 
         if ($request->password == $request->confirm) {
 

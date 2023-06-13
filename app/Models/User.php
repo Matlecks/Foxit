@@ -51,26 +51,26 @@ class User extends Authenticatable
     ];
     public function projects(): BelongsToMany
     {
-
-        //return $this->belongsToMany(Projects::class);
         return $this->belongsToMany(Projects::class, 'users_projects', 'user_id', 'projects_id');
     }
 
     public function userToService()
     {
-
         return $this->hasMany(Services::class);
     }
 
     public function review()
     {
-
         return $this->hasMany(Review::class);
     }
 
     public function posts()
     {
-
         return $this->hasMany(Posts::class);
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
     }
 }

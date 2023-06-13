@@ -41,44 +41,68 @@
                     @endforeach
                 </div>
                 @if ($services != null)
-                        @foreach ($services as $service)
-                            <div
-                                class="border-custom text-decoration-none col-12 d-flex flex-wrap p-4 justify-content-between mt-4">
-                                <div class="col-lg-4 col-md-4 col-12 services-element-img-container">
-                                    <img src="/storage/{{ $service->anounce_image }}" class=""
-                                        style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="d-flex justify-content-between">
+                        <div class="col-3 d-none d-md-none d-lg-block">
+                            <div style="position: sticky; top: 50px;">
+                                <div class="btn-group-vertical col-12 h-50 fs-15 fw-light text-montserrat my-4"
+                                    style="position: sticky; top: 50px;">
+                                    @foreach ($sections as $section)
+                                        <a href="" type="button"
+                                            class="btn border-custom ps-3 py-3 text-start">{{ $section->title }}</a>
+                                    @endforeach
+                                    <a href="" type="button"
+                                        class="btn border-custom ps-3 py-3 text-start">фывыфв</a>
+                                    <a href="" type="button"
+                                        class="btn border-custom ps-3 py-3 text-start">фывыфвфыв</a>
                                 </div>
-                                <div
-                                    class="col-lg-7 col-md-5 col-12 mt-lg-0 mt-md-0 mt-5 text px-lg-3 px-md-3">
-                                    <div class="title-over mb-1">
-                                        {{ Services_tree::find($service->section_id)->title }}</div>
-                                    <a href="{{ route('ShowDetailPage', $id = $service->id) }}"
-                                        class="card-title text-decoration-none"
-                                        style="color:#000000; font-size: 18px;">
-                                        {{ $service->title }}
-                                    </a>
-                                    <div class="title-preview mt-3"
-                                        style="font-size: 13px; line-height: 20px">
-                                        {{ $service->anounce_text }}
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-3 col-12 mt-lg-0 mt-md-0 mt-4">
-                                    <div class="fw-bold fs-17 text-montserrat">от {{ $service->cost }}
-                                        рублей
-                                    </div>
-                                    <button type="submit"
-                                        class="btn btn-primary text-montserrat fs-14 fw-bold col-12 px-5 py-2 mt-lg-4 mt-md-4 mt-2"
-                                        style="background: #365EDC; border-color: #365EDC;">Оформить</button>
-
+                                <div class="col-12 rounded-2"
+                                    style="min-height: 450px; background: #fafafa url(https://i.pinimg.com/564x/b6/ba/85/b6ba855d3f51f5fb3b5aba54c571aca3.jpg);background-size: cover;
+                                    background-position: center;
+                                    background-repeat: no-repeat;">
                                 </div>
                             </div>
-                        @endforeach
-                    @endif
+                        </div>
+                        <div class="col-lg-9 col-12 d-flex flex-wrap">
+                            @foreach ($services as $service)
+                                <div class="col-lg-4 col-md-6 col-sm-12 my-4 px-lg-3 px-md-2 px-0">
+                                    <div class="border-custom bg-white">
+                                        <div class=""
+                                            style="height: 235px; background: #fafafa;border-top-left-radius: 4px; border-top-right-radius: 4px;">
+                                            <img class=""
+                                                style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: 4px; border-top-right-radius: 4px;"
+                                                src="/storage/{{ $service->anounce_image }}"
+                                                height="235">
+                                        </div>
+                                        <div class="col-9 mx-auto text-montserrat">
+                                            <div class="pt-5 card-title-over">
+                                                @if (Services_tree::find($service->section_id)->id == 1)
+                                                @else
+                                                    {{ Services_tree::find($service->section_id)->title }}
+                                                @endif
+                                            </div>
+                                            <div class="my-3 card-title"><a
+                                                    href="{{ route('ShowDetailPage', $id = $service->id) }}"
+                                                    class="text-decoration-none text-black">{{ $service->title }}</a>
+                                            </div>
+
+                                            <div class="title-preview">{!! $service->anounce_text !!}
+                                            </div>
+
+                                            <div class="my-4">от {{ $service->cost }}</div>
+                                            <a href="#"
+                                                class="btn btn-outline-primary mt-3 mb-4 col-12 fw-bolder text-montserrat fs-14">Заказать</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                @endif
             @elseif(isset($subsections))
-                <div class="{{-- d-flex justify-content-between --}} {{-- row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 --}}"
+                <div class=""
                     style="display: grid; grid-gap: 20px; grid-template-columns: repeat(auto-fill,minmax(310px,1fr));">
                     @foreach ($subsections as $subsection)
-                        <div class="{{-- col-lg-3 col-md-6 --}} col-12  mb-4">
+                        <div class="col-12  mb-4">
                             <div class="border-custom text-decoration-none">
                                 <div class="px-3 py-3 d-lg-flex d-md-flex align-items-center">
                                     <div class="col-lg-3 col-md-3 col-12">
@@ -102,40 +126,43 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="{{-- d-flex justify-content-between row row-cols-lg-1 row-cols-md-2 --}} services_list" {{-- style="display: grid; grid-gap: 20px; grid-template-columns: 1fr;" --}}>
+                <div class="services_list">
                     @if ($services != null)
-                        @foreach ($services as $service)
-                            <div
-                                class="border-custom text-decoration-none col-12 d-flex flex-wrap p-4 justify-content-between">
-                                <div class="col-lg-4 col-md-4 col-12 services-element-img-container">
-                                    <img src="/storage/{{ $service->anounce_image }}" class=""
-                                        style="width: 100%; height: 100%; object-fit: cover;">
-                                </div>
-                                <div
-                                    class="col-lg-7 col-md-5 col-12 mt-lg-0 mt-md-0 mt-5 text px-lg-3 px-md-3">
-                                    <div class="title-over mb-1">
-                                        {{ Services_tree::find($service->section_id)->title }}</div>
-                                    <a href="{{ route('ShowDetailPage', $id = $service->id) }}"
-                                        class="card-title text-decoration-none"
-                                        style="color:#000000; font-size: 18px;">
-                                        {{ $service->title }}
-                                    </a>
-                                    <div class="title-preview mt-3"
-                                        style="font-size: 13px; line-height: 20px">
-                                        {{ $service->anounce_text }}
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-3 col-12 mt-lg-0 mt-md-0 mt-4">
-                                    <div class="fw-bold fs-17 text-montserrat">от {{ $service->cost }}
-                                        рублей
-                                    </div>
-                                    <button type="submit"
-                                        class="btn btn-primary text-montserrat fs-14 fw-bold col-12 px-5 py-2 mt-lg-4 mt-md-4 mt-2"
-                                        style="background: #365EDC; border-color: #365EDC;">Оформить</button>
+                        <div
+                            class="my-5 d-flex justify-content-between row row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
+                            @foreach ($services as $service)
+                                <div class="col-lg-3 col-md-6 col-sm-12 my-4">
+                                    <div class="border-custom bg-white">
+                                        <div class=""
+                                            style="height: 235px; background: #fafafa;border-top-left-radius: 4px; border-top-right-radius: 4px;">
+                                            <img class=""
+                                                style="width: 100%; height: 100%; object-fit: cover; border-top-left-radius: 4px; border-top-right-radius: 4px;"
+                                                src="/storage/{{ $service->anounce_image }}"
+                                                height="235">
+                                        </div>
+                                        <div class="col-9 mx-auto text-montserrat">
+                                            <div class="pt-5 card-title-over">
+                                                @if (Services_tree::find($service->section_id)->id == 1)
+                                                @else
+                                                    {{ Services_tree::find($service->section_id)->title }}
+                                                @endif
+                                            </div>
+                                            <div class="my-3 card-title"><a
+                                                    href="{{ route('ShowDetailPage', $id = $service->id) }}"
+                                                    class="text-decoration-none text-black">{{ $service->title }}</a>
+                                            </div>
 
+                                            <div class="title-preview">{!! $service->anounce_text !!}
+                                            </div>
+
+                                            <div class="my-4">от {{ $service->cost }}</div>
+                                            <a href="#"
+                                                class="btn btn-outline-primary mt-3 mb-4 col-12 fw-bolder text-montserrat fs-14">Заказать</a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     @endif
                 </div>
             @endif

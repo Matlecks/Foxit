@@ -7,7 +7,6 @@ use App\Models\Projects;
 use App\Models\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class ProjectController extends Controller
 {
@@ -58,6 +57,14 @@ class ProjectController extends Controller
 
     public function AddProject(Request $request)
     {
+        $validated = $request->validate([
+
+            'title' => 'required',
+            'anounce_image' => 'image',
+            'details_image' => 'image',
+
+        ]);
+        
         $project = new Projects();
 
         $project->title = ($request->title);
@@ -101,6 +108,14 @@ class ProjectController extends Controller
 
     public function UpdateProject(Request $request, $id)
     {
+        $validated = $request->validate([
+
+            'title' => 'required',
+            'anounce_image' => 'image',
+            'details_image' => 'image',
+
+        ]);
+
         $project = Projects::find($id);
 
         $project->title = ($request->title);

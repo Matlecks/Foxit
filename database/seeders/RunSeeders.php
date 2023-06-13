@@ -21,6 +21,8 @@ class RunSeeders extends Seeder
         Posts_demoSeeder::class,
         Projects_demoSeeder::class,
         Reviews_demoSeeder::class,
+        RoleSeeder::class,
+        BaseInfoSeeder::class,
     ]);
 }
 }

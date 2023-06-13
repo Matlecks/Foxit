@@ -16,7 +16,7 @@ class ServicesController extends Controller
         $services = Services::all();
         //$posts = Post::where('User_id', Auth::User()->id)->paginate(4);
         $contacts = BaseInfo::first();
-        return view('services', compact('services','contacts'));
+        return view('services', compact('services', 'contacts'));
     }
     public function ShowTable()
     {
@@ -31,7 +31,7 @@ class ServicesController extends Controller
         $reviews = Review::where('id', '=', $service->reviews_id)->get();
         $contacts = BaseInfo::first();
 
-        return view('service_detail', compact('service', 'user', 'reviews','contacts'));
+        return view('service_detail', compact('service', 'user', 'reviews', 'contacts'));
     }
 
     public function AddPageService()
@@ -46,6 +46,13 @@ class ServicesController extends Controller
 
     public function AddService(Request $request)
     {
+        $validated = $request->validate([
+            'title' => 'required',
+            'anounce_image' => 'image',
+            'details_image' => 'image',
+            'users_id' => 'required'
+        ]);
+        
         $service = new Services();
 
         $service->title = ($request->title);
@@ -86,16 +93,31 @@ class ServicesController extends Controller
         $element = Services::withTrashed()->find($id);
         $sections = Services_tree::all();
         $parent_id = Services::withTrashed()->find($id)->section_id;
+        $parent_id_in_array = $parent_id - 1;
         $parent_section = Services_tree::find($parent_id);
+
+        foreach ($sections as $section) {
+            if ($section->id == $parent_id) {
+                unset($sections[$parent_id_in_array]);
+                break;
+            }
+        }
         $users = User::all();
         $reviews = Review::all();
         $title = "Услуга";
 
-        return view('EditPage', compact('element', 'title', 'sections', 'parent_id', 'parent_section', 'id', 'users', 'reviews'));
+        return view('EditPage', compact('element', 'title', 'sections', 'parent_section', 'users', 'reviews'));
     }
 
     public function UpdateService(Request $request, $id)
     {
+        $validated = $request->validate([
+            'title' => 'required',
+            'anounce_image' => 'image',
+            'details_image' => 'image',
+            'users_id' => 'required'
+        ]);
+
         $service = Services::find($id);
 
         $service->title = ($request->title);

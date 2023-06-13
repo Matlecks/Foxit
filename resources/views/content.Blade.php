@@ -147,7 +147,11 @@
                                 </div>
                                 <div class="col-9 mx-auto text-montserrat">
                                     <div class="pt-5 card-title-over">
-                                        {{ Services_tree::find($service->section_id)->title }}</div>
+                                        @if (Services_tree::find($service->section_id)->id == 1)
+                                        @else
+                                            {{ Services_tree::find($service->section_id)->title }}
+                                        @endif
+                                    </div>
                                     <div class="my-3 card-title"><a
                                             href="{{ route('ShowDetailPage', $id = $service->id) }}"
                                             class="text-decoration-none text-black">{{ $service->title }}</a>

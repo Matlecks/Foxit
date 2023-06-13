@@ -62,6 +62,12 @@ class ServicesTreeController extends Controller
 
     public function AddSection(Request $request)
     {
+        $validated = $request->validate([
+            'title' => 'required',
+            'anounce_image' => 'image',
+            'details_image' => 'image',
+        ]);
+
         $section = new Services_tree();
 
         $section->title = ($request->title);
@@ -99,7 +105,7 @@ class ServicesTreeController extends Controller
         $sections = Services_tree::all();
         $parent_id = Services_tree::withTrashed()->find($id)->parent_id;
         $parent_section = Services_tree::find($parent_id);
-        //dd($element, $parent_id, $parent_section);
+
         $title = "Раздел";
 
         return view('EditPage', compact('element', 'title', 'sections', 'parent_section', 'parent_id', 'id'));
@@ -107,6 +113,12 @@ class ServicesTreeController extends Controller
 
     public function UpdateServiceSection(Request $request, $id)
     {
+        $validated = $request->validate([
+            'title' => 'required',
+            'anounce_image' => 'image',
+            'details_image' => 'image',
+        ]);
+
         $section = Services_tree::find($id);
 
         $section->title = ($request->title);

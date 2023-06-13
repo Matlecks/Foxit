@@ -54,9 +54,13 @@ Route::view('/registration', 'registrate')->name('registrate_page');
 
 Route::get('/cabinet', [IndexPageController::class, 'show_cabinet'])->name('cabinet');
 
+Route::view('/admin_auth_page','admin_auth')->name('admin_auth');
+
 Route::post('/registrate', [UserController::class, 'UserAdd'])->name('UserAdd');
 
 Route::post('/auth', [UserController::class, 'UserAuth'])->name('UserAuth');
+
+Route::post('/admin_auth', [UserController::class, 'AdminAuth'])->name('AdminAuth');
 
 Route::get('/about', [IndexPageController::class, 'show_company_about'])->name('about');
 

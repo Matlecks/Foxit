@@ -33,8 +33,6 @@ return new class extends Migration
             $table->text('FileNameDetailsImg')->nullable();
             $table->text('TAGS')->nullable();
             $table->softDeletes();
-            //$table->foreignId('users_id')->constrained('users');
-            //$table->foreignId('reviews_id')->constrained('reviews');
             $table->timestamps();
         });
     }

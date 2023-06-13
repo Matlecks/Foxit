@@ -22,7 +22,7 @@
                 <input class="form-control form-login-1 w-25" type="text" id="form-login"
                     value="{{ $contacts->phone }}" name="phone">
                 <label for="form-login" class="form-label title-over mt-5">E-mail</label>
-                <input class="form-control form-login-1 w-25" type="text" id="form-login"
+                <input class="form-control form-login-1 w-25 @error('email') is-invalid @enderror" type="text" id="form-login"
                     value="{{ $contacts->email }}" name="email">
                 <label for="form-login" class="form-label title-over mt-5">Время работы</label>
                 <input class="form-control form-login-1 w-25" type="text" id="form-login"

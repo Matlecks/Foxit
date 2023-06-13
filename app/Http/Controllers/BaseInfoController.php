@@ -22,6 +22,10 @@ class BaseInfoController extends Controller
     }
     public function update_contacts(Request $request)
     {
+        $validated = $request->validate([
+            'email' => 'required|email|unique:users,email|max:255',
+        ]);
+
         $contacts = BaseInfo::first();
 
         $contacts->phone = $request->phone;
